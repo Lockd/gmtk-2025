@@ -1,0 +1,6 @@
+# FMOD project files
+
+# User-specific files and locally generated files
+.cache/**
+.unsaved/**
+.user/**
