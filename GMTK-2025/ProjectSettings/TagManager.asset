@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Gate
+  - Defender
   layers:
   - Default
   - TransparentFX

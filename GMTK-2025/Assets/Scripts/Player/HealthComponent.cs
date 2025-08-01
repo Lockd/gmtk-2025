@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using TMPro;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -9,10 +11,17 @@ public class HealthComponent : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
 
+    public Slider hpSlider;
+
+    public TextMeshProUGUI hpText;
+
     public void init(int maxHealth)
     {
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
+        hpSlider.maxValue = maxHealth;
+        hpSlider.value = currentHealth;
+        hpText.text = currentHealth + "/" + maxHealth;
     }
 
     public void onChangeHP(int amount)
@@ -20,6 +29,8 @@ public class HealthComponent : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         if (currentHealth <= 0) onDeath.Invoke();
+        hpSlider.value = currentHealth;
+        hpText.text = currentHealth + "/" + maxHealth;
     }
 
     public void onChangeMaxHP(int amount)
