@@ -11,5 +11,5 @@ public class UnitSO : ScriptableObject
     public int healthPerLevel;
     public int attack;
     public int attackPerLevel;
-    public float speed;
+    public float levelUpTime = 3f;
 }

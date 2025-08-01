@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1368bc53d1acd547ae9bb3c572aef1e, type: 3}
+  m_Name: Archer
+  m_EditorClassIdentifier: 
+  spritesPerLevel:
+  - {fileID: -1288772577, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -442811289, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -233289419, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  icon: {fileID: 0}
+  maxLevel: 3
+  health: 2
+  healthPerLevel: 1
+  attack: 2
+  attackPerLevel: 2
+  speed: 1.5

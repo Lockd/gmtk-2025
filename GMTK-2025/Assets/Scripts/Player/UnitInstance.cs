@@ -19,7 +19,6 @@ public class UnitInstance : MonoBehaviour
 
     public void init(UnitSO archetype)
     {
-        // TODO check for additional levels?
         this.archetype = archetype;
         currentLevel = 0;
         cosmetics.setSprite(archetype.spritesPerLevel[currentLevel]);
@@ -27,8 +26,9 @@ public class UnitInstance : MonoBehaviour
 
     public void onLevelUp()
     {
-        currentLevel++;
+        currentLevel = Mathf.Clamp(currentLevel + 1, 0, archetype.maxLevel);
         hp.onChangeMaxHP(archetype.healthPerLevel);
+        if (currentLevel != 1) cosmetics.setSprite(archetype.spritesPerLevel[currentLevel]);
     }
 
     private void onDeath()
