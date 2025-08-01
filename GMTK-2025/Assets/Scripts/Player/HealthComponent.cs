@@ -19,9 +19,12 @@ public class HealthComponent : MonoBehaviour
     {
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
-        hpSlider.maxValue = maxHealth;
-        hpSlider.value = currentHealth;
-        hpText.text = currentHealth + "/" + maxHealth;
+        if (hpSlider)
+        {
+            hpSlider.maxValue = maxHealth;
+            hpSlider.value = currentHealth;
+        }
+        if (hpText) hpText.text = currentHealth + "/" + maxHealth;
     }
 
     public void onChangeHP(int amount)
@@ -29,8 +32,8 @@ public class HealthComponent : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
         if (currentHealth <= 0) onDeath.Invoke();
-        hpSlider.value = currentHealth;
-        hpText.text = currentHealth + "/" + maxHealth;
+        if (hpSlider) hpSlider.value = currentHealth;
+        if (hpText) hpText.text = currentHealth + "/" + maxHealth;
     }
 
     public void onChangeMaxHP(int amount)
