@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     int wave;
 
-    public BoxCollider2D[] spawnLocations;
+    public BoxCollider2D spawnLocation;
 
     public Transform tower;
     // Start is called before the first frame update
@@ -49,8 +49,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(wave.interval * subWave);
         for (int i = 0; i < wave.enemyPerInterval[subWave]; i++)
         {
-            int index = Random.Range(0, 4);
-            BoxCollider2D col = spawnLocations[index];
+            BoxCollider2D col = spawnLocation;
             Vector2 spawn = RandomPointInBounds(col.bounds);
             GameObject obj = Instantiate(wave.enemy[subWave], spawn, Quaternion.identity);
             obj.GetComponent<Enemy>().target = tower;

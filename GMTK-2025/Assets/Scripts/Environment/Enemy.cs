@@ -20,11 +20,21 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), moveSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, target.position) <= 3.5f)
+        if (Vector2.Distance(transform.position, target.position) <= 2f)
         {
             moveSpeed = 0;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Gate"))
+        {
+            
+                moveSpeed = 0;
+            
         }
     }
 }

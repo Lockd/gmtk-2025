@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13859f635093e3141a11bf06425f3d91
+guid: 7a9e6e50adafc4a43afe33cda9d154f1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,118 +110,160 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 7_0
+      name: GMTK_Tiles_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 70
-        height: 130
+        x: 64
+        y: 416
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b63e9f48b8631e0439b734c4428e3ff4
-      internalID: 496043903
+      spriteID: dcd57d1ce9df2e94ea49bef41f8e05cd
+      internalID: 1923651728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7_1
+      name: GMTK_Tiles_1
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 70
-        height: 130
+        x: 64
+        y: 401
+        width: 16
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff6976ef61fb504439fc6c6ae6523822
-      internalID: -1845748764
+      spriteID: df91fbe48271b2a4b8d3ca0c8ba0db17
+      internalID: 464284806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7_2
+      name: GMTK_Tiles_2
       rect:
         serializedVersion: 2
-        x: 140
-        y: 0
-        width: 70
-        height: 130
+        x: 128
+        y: 401
+        width: 16
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fcb2f2e15d22e1438faf4aee4b6b0ca
-      internalID: -1830872075
+      spriteID: 1591ac36597b71a438a90733461dabd5
+      internalID: -1882917365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7_3
+      name: GMTK_Tiles_3
       rect:
         serializedVersion: 2
-        x: 210
-        y: 0
-        width: 70
-        height: 130
+        x: 80
+        y: 432
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc0e08f2157237c469de34c378f670a7
-      internalID: -1364882985
+      spriteID: 36c1df90e4abaef4585252d5e17bc4bd
+      internalID: -570197394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7_4
+      name: GMTK_Tiles_4
       rect:
         serializedVersion: 2
-        x: 280
-        y: 0
-        width: 70
-        height: 130
+        x: 96
+        y: 432
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1de4604c5af339546a74375e0dab83f7
-      internalID: -66423754
+      spriteID: b57a07ff301ff7346939ce7d744e1514
+      internalID: -1527148811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 7_5
+      name: GMTK_Tiles_5
       rect:
         serializedVersion: 2
-        x: 350
-        y: 0
-        width: 70
-        height: 130
+        x: 107
+        y: 401
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69b3ac1e34ac234dbf76627cc0f91a0
+      internalID: 242870764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 432
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331bcb0299135a4438241a1cf03cc9d9
+      internalID: -279813954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 576
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b4ce8bc71e61a84684e9f0002335825
-      internalID: 2056417111
+      spriteID: df4a1f92bc53a774fbec4f016b9a2e95
+      internalID: -2088909081
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      7_0: 496043903
-      7_1: -1845748764
-      7_2: -1830872075
-      7_3: -1364882985
-      7_4: -66423754
-      7_5: 2056417111
+      GMTK_Tiles_0: 1923651728
+      GMTK_Tiles_1: 464284806
+      GMTK_Tiles_2: -1882917365
+      GMTK_Tiles_3: -570197394
+      GMTK_Tiles_4: -1527148811
+      GMTK_Tiles_5: 242870764
+      GMTK_Tiles_6: -279813954
+      GMTK_Tiles_7: -2088909081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
