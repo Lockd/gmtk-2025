@@ -11,6 +11,7 @@ public class TrainingManager : MonoBehaviour
     [Header("Running settings")]
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform midPoint;
+    [SerializeField] private Transform combatPoint;
 
     public static TrainingManager Instance { get; private set; }
 
@@ -53,6 +54,17 @@ public class TrainingManager : MonoBehaviour
         });
     }
 
+    // TODO this is only need for testing
+    private void spawnCombatUnit(UnitSO unitType)
+    {
+        GameObject unitObject = Instantiate(unitPrefab);
+        unitObject.transform.position = combatPoint.position;
+        UnitInstance unitInstance = unitObject.GetComponent<UnitInstance>();
+        unitInstance.init(unitType);
+        unitInstances.Add(unitInstance);
+        unitInstance.onLevelUp();
+    }
+
 #if UNITY_EDITOR
     private void Update()
     {
@@ -61,6 +73,11 @@ public class TrainingManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) onSpawnTrainingUnit(unitTypes[2]);
         if (Input.GetKeyDown(KeyCode.Alpha4)) onSpawnTrainingUnit(unitTypes[3]);
         if (Input.GetKeyDown(KeyCode.Alpha5)) onSpawnTrainingUnit(unitTypes[4]);
+        if (Input.GetKeyDown(KeyCode.F1)) spawnCombatUnit(unitTypes[0]);
+        if (Input.GetKeyDown(KeyCode.F2)) spawnCombatUnit(unitTypes[1]);
+        if (Input.GetKeyDown(KeyCode.F3)) spawnCombatUnit(unitTypes[2]);
+        if (Input.GetKeyDown(KeyCode.F4)) spawnCombatUnit(unitTypes[3]);
+        if (Input.GetKeyDown(KeyCode.F5)) spawnCombatUnit(unitTypes[4]);
     }
 #endif
 }

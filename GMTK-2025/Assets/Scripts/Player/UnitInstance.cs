@@ -22,6 +22,7 @@ public class UnitInstance : MonoBehaviour
         this.archetype = archetype;
         currentLevel = 0;
         cosmetics.setSprite(archetype.spritesPerLevel[currentLevel]);
+        hp.init(archetype.health);
     }
 
     public void onLevelUp()
