@@ -41,9 +41,9 @@ public class HealthComponent : MonoBehaviour
         if (hpText) hpText.text = currentHealth + "/" + maxHealth;
     }
 
-    public void onChangeMaxHP(int amount)
+    public void onChangeMaxHP(int newMaxHP)
     {
-        maxHealth += amount;
+        maxHealth = newMaxHP;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 }

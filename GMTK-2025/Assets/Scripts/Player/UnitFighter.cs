@@ -94,7 +94,9 @@ public class UnitFighter : MonoBehaviour
             Debug.LogWarning("Target does not have HealthComponent");
             return;
         }
-        targetHp.onChangeHP(-unitInstance.archetype.attack);
+
+        int damage = unitInstance.archetype.attack[unitInstance.currentLevel];
+        targetHp.onChangeHP(-damage);
         attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
     }
 

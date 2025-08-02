@@ -10,15 +10,12 @@ public class UnitSO : ScriptableObject
     public Sprite icon;
     public int purchasePrice = 5;
     public int maxLevel = 3;
-    public int health;
-    public int healthPerLevel;
+    public List<int> health;
     public float attackRange = 1f;
     public float breakBetweenAttacks = 0.5f;
-    public int attack;
-    public int attackPerLevel;
+    public List<int> attack;
     public float levelUpTime = 3f;
     public float moveSpeed;
-
     public ActionSheet actionSheet;
     public Vector2 spawnOffset;
 }
