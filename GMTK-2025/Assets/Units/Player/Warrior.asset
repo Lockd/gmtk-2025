@@ -15,16 +15,17 @@ MonoBehaviour:
   isEnemy: 0
   targetType: 0
   spritesPerLevel:
-  - {fileID: 1247368778, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
-  - {fileID: -397433424, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
-  - {fileID: -2022447142, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -1298783118, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -1298783118, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -840599850, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -840599850, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
   icon: {fileID: -1415957858, guid: abae6a78af560374ea988de174301642, type: 3}
   purchasePrice: 5
-  maxLevel: 3
-  health: 04000000040000000400000004000000040000000400000004000000040000000400000004000000
+  maxLevel: 4
+  health: 1e000000320000005500000091000000
   attackRange: 1
-  breakBetweenAttacks: 0.5
-  attack: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
+  breakBetweenAttacks: 1
+  attack: 0a0000000f000000190000002d000000
   levelUpTime: 3
   moveSpeed: 2
   actionSheet: {fileID: 0}
