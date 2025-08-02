@@ -7,6 +7,7 @@ using TMPro;
 
 public class HealthComponent : MonoBehaviour
 {
+    public bool isDead = false;
     public UnityEvent onDeath;
     public int currentHealth;
     public int maxHealth;
@@ -31,7 +32,11 @@ public class HealthComponent : MonoBehaviour
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
 
-        if (currentHealth <= 0) onDeath.Invoke();
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+            onDeath.Invoke();
+        }
         if (hpSlider) hpSlider.value = currentHealth;
         if (hpText) hpText.text = currentHealth + "/" + maxHealth;
     }

@@ -77,4 +77,9 @@ public class EnemySpawner : MonoBehaviour
             Random.Range(bounds.min.y, bounds.max.y)
         );
     }
+
+    public void onUnitDeath(UnitFighter unit)
+    {
+        spawnedEnemies.Remove(unit);
+    }
 }

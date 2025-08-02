@@ -31,7 +31,9 @@ public class UnitDetectionModule : MonoBehaviour
             )
         );
 
-        if (isEnemy && potentialTargets.Count == 0)
+        Vector2 castleAttackPoint = new Vector2(CastleManager.instance.transform.position.x, parentUnit.transform.position.y);
+        float distanceToCastle = Vector2.Distance(parentUnit.transform.position, castleAttackPoint);
+        if (isEnemy && potentialTargets.Count == 0 && distanceToCastle < parentUnit.archetype.attackRange)
         {
             return CastleManager.instance.gameObject;
         }

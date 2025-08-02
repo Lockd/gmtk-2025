@@ -6,7 +6,7 @@ public class UnitFighter : MonoBehaviour
 {
     public GameObject currentTarget;
     private float enemiesCheckTimer = 0f;
-    float moveSpeed;
+    private float attackAt = 0f;
     Vector2 startingPosition;
 
     [Header("Modules")]
@@ -19,54 +19,95 @@ public class UnitFighter : MonoBehaviour
     void Start()
     {
         startingPosition = transform.position;
-        moveSpeed = unitInstance.archetype.moveSpeed;
         actionsManager.actionSheet = unitInstance.archetype.actionSheet;
+
+        unitInstance.hp.onDeath.AddListener(onDeath);
     }
 
     void Update()
     {
-        if (currentTarget != null)
-        {
-            actionsManager.PerformAction(currentTarget.gameObject);
-        }
+        if (unitInstance.hp.isDead) return;
+
+        // if (currentTarget != null)
+        // {
+        //     actionsManager.PerformAction(currentTarget.gameObject);
+        // }
+
+        float moveSpeed = unitInstance.archetype.moveSpeed;
+
+        // Move to target
         if (currentTarget != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, currentTarget.transform.position, moveSpeed * Time.deltaTime);
         }
-        else if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) > 0.1f)
+        // If is enemy and no target - some to attack castle, but not lock the target on castle
+        if (currentTarget == null && unitInstance.archetype.isEnemy)
         {
-            // TODO we should not move directly to the point, just towards the collider, to a shortest distance
-            transform.position = Vector2.MoveTowards(transform.position, CastleManager.instance.transform.position, moveSpeed * Time.deltaTime);
+            Vector2 castlePosition = new Vector2(CastleManager.instance.transform.position.x, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, castlePosition, moveSpeed * Time.deltaTime);
         }
 
+        // If no target and not at starting position, return to it
+        if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) > 0.1f && !unitInstance.archetype.isEnemy)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
+        }
+
+        // Try to search for target every 0.3 seconds
         if (currentTarget == null && Time.time >= enemiesCheckTimer)
         {
             lookForTarget();
-            enemiesCheckTimer = Time.time + 0.5f;
+            enemiesCheckTimer = Time.time + 0.3f;
         }
+
+        checkCanAttack();
+        checkIfTargetDead();
+    }
+
+    private void checkIfTargetDead()
+    {
+        if (currentTarget == null) return;
+
+        HealthComponent targetHealth = currentTarget.GetComponent<HealthComponent>();
+        if (targetHealth != null && targetHealth.isDead)
+        {
+            currentTarget = null;
+            lookForTarget();
+            return;
+        }
+    }
+
+    private void checkCanAttack()
+    {
+        if (attackAt > Time.time || currentTarget == null) return;
+        if (Vector2.Distance(transform.position, currentTarget.transform.position) <= unitInstance.archetype.attackRange)
+        {
+            attackTarget();
+        }
+    }
+
+    private void attackTarget()
+    {
+        HealthComponent targetHp = currentTarget.GetComponent<HealthComponent>();
+        if (targetHp == null)
+        {
+            Debug.LogWarning("Target does not have HealthComponent");
+            return;
+        }
+        targetHp.onChangeHP(-unitInstance.archetype.attack);
+        attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
     }
 
     public void lookForTarget()
     {
-        moveSpeed = 0;
-        Debug.Log("detection" + detection);
         currentTarget = detection.getTarget();
     }
 
-    public void OnEnemyDetectionEnd()
+    private void onDeath()
     {
-        moveSpeed = unitInstance.archetype.moveSpeed;
-    }
-
-    void PerformAction()
-    {
-        if (currentTarget != null)
-        {
-            actionsManager.PerformAction(currentTarget.gameObject);
-        }
-        else
-        {
-            OnEnemyDetectionEnd();
-        }
+        unitInstance.cosmetics.setSprite(null);
+        if (unitInstance.archetype.isEnemy) EnemySpawner.instance.onUnitDeath(this);
+        else TrainingManager.instance.onUnitDeath(this);
+        Destroy(gameObject, 0.5f);
     }
 }

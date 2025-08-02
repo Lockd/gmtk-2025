@@ -26,9 +26,12 @@ MonoBehaviour:
   - {fileID: 727101775, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
   - {fileID: 727101775, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
   icon: {fileID: 0}
+  purchasePrice: 5
   maxLevel: 10
-  health: 8
+  health: 5
   healthPerLevel: 3
+  attackRange: 1
+  breakBetweenAttacks: 1
   attack: 2
   attackPerLevel: 1
   levelUpTime: 0

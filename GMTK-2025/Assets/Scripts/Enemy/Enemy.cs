@@ -31,10 +31,10 @@ public class Enemy : MonoBehaviour
         }*/
     }
 
-    void DealDamage(HealthComponent health)
+    void DealDamage(HealthComponent target)
     {
         // Hardcoded damage is wrong
-        health.onChangeHP(-5);
+        target.onChangeHP(-5);
     }
 
     // Grisha: damage code can be reused

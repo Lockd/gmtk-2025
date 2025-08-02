@@ -85,6 +85,11 @@ public class TrainingManager : MonoBehaviour
         combatUnits.Add(unitObject.GetComponent<UnitFighter>());
     }
 
+    public void onUnitDeath(UnitFighter unit)
+    {
+        combatUnits.Remove(unit);
+    }
+
 #if UNITY_EDITOR
     private void Update()
     {
