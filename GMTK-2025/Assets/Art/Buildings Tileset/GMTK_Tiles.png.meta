@@ -239,9 +239,9 @@ TextureImporter:
       name: GMTK_Tiles_6
       rect:
         serializedVersion: 2
-        x: 128
+        x: 64
         y: 432
-        width: 15
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -286,7 +286,7 @@ TextureImporter:
         width: 14
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,6 +294,174 @@ TextureImporter:
       bones: []
       spriteID: b11c8189148d8244ba3e31b634b5124f
       internalID: 1091849994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_9
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e334987ef8403f54885bb10b53f11a1d
+      internalID: 885748812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9524e1d8a4b5e45aaded5e6c54ee46
+      internalID: -266309659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d07e445c66c6d84685b88f5e78f5e9e
+      internalID: -791689855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9130e0b3bdc1af34dac45f5a3ffc123c
+      internalID: -764816804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 448
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51131ed36f36e6e4f991698654b0f91b
+      internalID: -1844467567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 480
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73f9930ee38da9b449b8a3928becff02
+      internalID: -2001274983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7d9c561e1a2c6479634ad04a2458dd
+      internalID: -1504358981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_16
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 177
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f7802a93c74f64ebb016e10840ee5a
+      internalID: -97486060
       vertices: []
       indices: 
       edges: []
@@ -311,6 +479,13 @@ TextureImporter:
     nameFileIdTable:
       GMTK_Tiles_0: 1923651728
       GMTK_Tiles_1: 464284806
+      GMTK_Tiles_10: -266309659
+      GMTK_Tiles_11: -791689855
+      GMTK_Tiles_12: -764816804
+      GMTK_Tiles_13: -1844467567
+      GMTK_Tiles_14: -2001274983
+      GMTK_Tiles_15: -1504358981
+      GMTK_Tiles_16: -97486060
       GMTK_Tiles_2: -1882917365
       GMTK_Tiles_3: -570197394
       GMTK_Tiles_4: -1527148811
@@ -318,6 +493,7 @@ TextureImporter:
       GMTK_Tiles_6: -279813954
       GMTK_Tiles_7: -2088909081
       GMTK_Tiles_8: 1091849994
+      GMTK_Tiles_9: 885748812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
