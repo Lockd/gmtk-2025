@@ -10,6 +10,7 @@ public class RecruitButton : MonoBehaviour
     public UnitSO thisUnit;
     Button thisButton;
 
+    public int cost;
     void Start()
     {
         thisButton = GetComponent<Button>();
@@ -18,6 +19,10 @@ public class RecruitButton : MonoBehaviour
 
     void Recruit()
     {
-        trainingManager.onSpawnTrainingUnit(thisUnit);
+        if (GoldManager.instance.canAfford(cost))
+        {
+            GoldManager.instance.changeGold(-cost);
+            trainingManager.onSpawnTrainingUnit(thisUnit);
+        }
     }
 }
