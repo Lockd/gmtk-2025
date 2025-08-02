@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public float maxMoveSpeed;
-    float moveSpeed;
+    public float moveSpeed;
     public int attackDamage;
 
     public Transform target;
@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         moveSpeed = maxMoveSpeed;
+        maxHealth = Random.Range(10, 18);
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -52,8 +54,7 @@ public class Enemy : MonoBehaviour
         if(collision.CompareTag("Defender"))
         {
             HealthComponent defenderHealth = collision.GetComponent<HealthComponent>();
-            DealDamage(defenderHealth);
-            //transform.position = new Vector2(transform.position.x + castleManager.castlePushForce, transform.position.y);
+            //DealDamage(defenderHealth);
             moveSpeed = 0;
         }
     }

@@ -265,7 +265,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,6 +273,27 @@ TextureImporter:
       bones: []
       spriteID: df4a1f92bc53a774fbec4f016b9a2e95
       internalID: -2088909081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 370
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b11c8189148d8244ba3e31b634b5124f
+      internalID: 1091849994
       vertices: []
       indices: 
       edges: []
@@ -296,6 +317,7 @@ TextureImporter:
       GMTK_Tiles_5: 242870764
       GMTK_Tiles_6: -279813954
       GMTK_Tiles_7: -2088909081
+      GMTK_Tiles_8: 1091849994
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

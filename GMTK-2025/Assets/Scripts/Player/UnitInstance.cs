@@ -25,11 +25,19 @@ public class UnitInstance : MonoBehaviour
         hp.init(archetype.health);
     }
 
+    public void initOnDeploy(UnitInstance unit)
+    {
+        archetype = unit.archetype;
+        currentLevel = unit.currentLevel; 
+        cosmetics.setSprite(archetype.spritesPerLevel[currentLevel - 1]);
+        hp.init(archetype.health);
+    }
+
     public void onLevelUp()
     {
         currentLevel = Mathf.Clamp(currentLevel + 1, 0, archetype.maxLevel);
         hp.onChangeMaxHP(archetype.healthPerLevel);
-        if (currentLevel != 1) cosmetics.setSprite(archetype.spritesPerLevel[currentLevel]);
+        if (currentLevel != 1) cosmetics.setSprite(archetype.spritesPerLevel[currentLevel - 1]);
     }
 
     private void onDeath()

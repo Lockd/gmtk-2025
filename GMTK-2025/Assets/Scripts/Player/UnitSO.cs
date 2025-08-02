@@ -12,4 +12,10 @@ public class UnitSO : ScriptableObject
     public int attack;
     public int attackPerLevel;
     public float levelUpTime = 3f;
+    public float moveSpeed;
+    public float detectionRadius;
+
+    public ActionSheet actionSheet;
+
+    public Vector2 spawnOffset;
 }

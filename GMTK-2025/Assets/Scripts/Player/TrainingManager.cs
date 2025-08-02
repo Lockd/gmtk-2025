@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.IO.Compression;
 
 public class TrainingManager : MonoBehaviour
 {
     public List<UnitSO> unitTypes = new List<UnitSO>();
-    public GameObject unitPrefab;
+    public GameObject trainingUnitPrefab;
+    public GameObject fightinggUnitPrefab;
     public List<UnitInstance> unitInstances = new List<UnitInstance>();
     [Header("Running settings")]
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform midPoint;
     [SerializeField] private Transform combatPoint;
+
+    public List<UnitInstance> unitInstancesAwaitingDecision = new List<UnitInstance>();
+
+    public UnitDecisionManager decisionManager;
 
     public static TrainingManager Instance { get; private set; }
 
@@ -28,7 +34,7 @@ public class TrainingManager : MonoBehaviour
 
     public void onSpawnTrainingUnit(UnitSO unitType)
     {
-        GameObject unitObject = Instantiate(unitPrefab);
+        GameObject unitObject = Instantiate(trainingUnitPrefab);
         unitObject.transform.position = startPoint.position;
         UnitInstance unit = unitObject.GetComponent<UnitInstance>();
         unit.init(unitType);
@@ -50,6 +56,8 @@ public class TrainingManager : MonoBehaviour
         runningSequence.Append(unit.transform.DOMove(topRight, timePerSegment).SetEase(Ease.Linear));
         runningSequence.OnComplete(() =>
         {
+            unitInstancesAwaitingDecision.Add(unit);
+            decisionManager.SetDecisions();
             unit.onLevelUp();
         });
     }
@@ -57,13 +65,21 @@ public class TrainingManager : MonoBehaviour
     // TODO this is only need for testing
     private void spawnCombatUnit(UnitSO unitType)
     {
-        GameObject unitObject = Instantiate(unitPrefab);
-        unitObject.transform.position = combatPoint.position;
+        GameObject unitObject = Instantiate(fightinggUnitPrefab);
         UnitInstance unitInstance = unitObject.GetComponent<UnitInstance>();
         unitInstance.init(unitType);
         unitInstances.Add(unitInstance);
         unitInstance.onLevelUp();
+        unitObject.transform.position = new Vector2(combatPoint.position.x + unitInstance.archetype.spawnOffset.x, combatPoint.position.y + unitInstance.archetype.spawnOffset.y);
     }
+
+    public void deployUnit(UnitInstance unit)
+    {
+        GameObject unitObject = Instantiate(fightinggUnitPrefab);
+        UnitInstance unitInstance = unitObject.GetComponent<UnitInstance>();
+        unitInstance.initOnDeploy(unit);
+        unitObject.transform.position = new Vector2(combatPoint.position.x + unit.archetype.spawnOffset.x, combatPoint.position.y + unit.archetype.spawnOffset.y);
+    } 
 
 #if UNITY_EDITOR
     private void Update()
