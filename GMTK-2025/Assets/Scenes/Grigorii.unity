@@ -12170,30 +12170,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1105742547}
     m_Modifications:
-    - target: {fileID: 2115256552525571454, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2115256552525571454, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2115256552525571454, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2115256552525571454, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2115256552525571454, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2115256552525571454, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12274,38 +12250,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4091358346090090135}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: applyUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelingSpeedBuilding, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2449959800962561014, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4120694876714419494, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1535241619, guid: 830d73574e400fc498df5d69e2cf8484, type: 3}
     - target: {fileID: 9174391592480078216, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_Name
       value: Upgrade Leveling Speed
@@ -12313,41 +12257,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9174391592480078216, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4091358346090090135}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
 --- !u!224 &4091358346090090133 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
   m_PrefabInstance: {fileID: 4091358346090090132}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4091358346090090134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9174391592480078216, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-  m_PrefabInstance: {fileID: 4091358346090090132}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4091358346090090135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4091358346090090134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d7c2d92e75188449bc6146d1b55b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  maxLevel: 3
-  buildingSprite: {fileID: 0}
-  upgradePrice: 0a0000001400000028000000
-  reduceLevelingSpeed:
-  - 0.3
-  - 0.3
-  - 0.3
 --- !u!1001 &8564413990629372646
 PrefabInstance:
   m_ObjectHideFlags: 0
