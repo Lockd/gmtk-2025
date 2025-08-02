@@ -16,6 +16,5 @@ public class EnemyGroup
 {
     public int level = 1;
     public int count = 1;
-    public int moneyPerUnit = 1;
     public UnitSO enemySO;
 }

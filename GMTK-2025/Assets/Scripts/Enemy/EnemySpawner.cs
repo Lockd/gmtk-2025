@@ -43,7 +43,6 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnWave()
     {
-        Debug.Log("Should spawn new wave: " + waveIdx);
         EnemyWave w = waves[waveIdx];
         StartCoroutine(DeployEnemies(w));
         waveIdx = Mathf.Clamp(waveIdx + 1, 0, waves.Length - 1);

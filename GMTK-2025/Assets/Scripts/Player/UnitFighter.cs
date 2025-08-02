@@ -108,7 +108,11 @@ public class UnitFighter : MonoBehaviour
     private void onDeath()
     {
         unitInstance.cosmetics.setSprite(null);
-        if (unitInstance.archetype.isEnemy) EnemySpawner.instance.onUnitDeath(this);
+        if (unitInstance.archetype.isEnemy)
+        {
+            EnemySpawner.instance.onUnitDeath(this);
+            GoldManager.instance.changeGold(unitInstance.archetype.goldOnKill);
+        }
         else TrainingManager.instance.onUnitDeath(this);
         Destroy(gameObject, 0.5f);
     }

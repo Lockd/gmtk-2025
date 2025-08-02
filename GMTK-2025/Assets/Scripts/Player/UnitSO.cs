@@ -9,6 +9,7 @@ public class UnitSO : ScriptableObject
     public List<Sprite> spritesPerLevel = new List<Sprite>();
     public Sprite icon;
     public int purchasePrice = 5;
+    public int goldOnKill = 1;
     public int maxLevel = 3;
     public List<int> health;
     public float attackRange = 1f;
