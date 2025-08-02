@@ -46,7 +46,7 @@ public class TrainingManager : MonoBehaviour
 
     public void startRunning(UnitInstance unit)
     {
-        float timePerSegment = unit.archetype.levelUpTime / 4f;
+        float timePerSegment = (unit.archetype.levelUpTime - UpgradesManager.instance.reduceLevelingSpeed) / 4f;
         Sequence runningSequence = DOTween.Sequence();
         Vector2 topRight = startPoint.position;
         Vector2 bottomRight = new Vector2(startPoint.position.x, midPoint.position.y);

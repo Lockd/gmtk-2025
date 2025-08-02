@@ -43,12 +43,6 @@ public class ActionsManager : MonoBehaviour
                 cooldown = actionSheet.attackCooldown;
             }
 
-            var enemy = target.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                //enemy.TakeDamage(damage);
-            }
-
             cooldownTimers[actionToUse] = Time.time + cooldown;
             lastActionTime = Time.time;
 

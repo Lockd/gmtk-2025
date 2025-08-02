@@ -34,10 +34,14 @@ public class HealthComponent : MonoBehaviour
     public void onChangeHP(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        TMP_Text damageText = Instantiate(damageTextPrefab, textSpawnPoint.position, Quaternion.identity, textSpawnPoint);
-        damageText.text = amount.ToString();
-        damageText.color = amount < 0 ? Color.red : Color.green;
-        damageText.DOFade(0, 1f).OnComplete(() => Destroy(damageText.gameObject));
+
+        if (damageTextPrefab && textSpawnPoint)
+        {
+            TMP_Text damageText = Instantiate(damageTextPrefab, textSpawnPoint.position, Quaternion.identity, textSpawnPoint);
+            damageText.text = amount.ToString();
+            damageText.color = amount < 0 ? Color.red : Color.green;
+            damageText.DOFade(0, 1f).OnComplete(() => Destroy(damageText.gameObject));
+        }
 
         if (currentHealth <= 0)
         {

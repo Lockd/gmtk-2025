@@ -28,15 +28,11 @@ public class UnitFighter : MonoBehaviour
     {
         if (unitInstance.hp.isDead) return;
 
-        // if (currentTarget != null)
-        // {
-        //     actionsManager.PerformAction(currentTarget.gameObject);
-        // }
-
         float moveSpeed = unitInstance.archetype.moveSpeed;
+        bool isInAttackRange = currentTarget != null && Vector2.Distance(transform.position, currentTarget.transform.position) <= unitInstance.archetype.attackRange;
 
         // Move to target
-        if (currentTarget != null)
+        if (currentTarget != null && !isInAttackRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, currentTarget.transform.position, moveSpeed * Time.deltaTime);
         }
@@ -46,7 +42,6 @@ public class UnitFighter : MonoBehaviour
             Vector2 castlePosition = new Vector2(CastleManager.instance.transform.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, castlePosition, moveSpeed * Time.deltaTime);
         }
-
         // If no target and not at starting position, return to it
         if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) > 0.1f && !unitInstance.archetype.isEnemy)
         {
@@ -95,7 +90,7 @@ public class UnitFighter : MonoBehaviour
             return;
         }
 
-        int damage = unitInstance.archetype.attack[unitInstance.currentLevel];
+        int damage = unitInstance.archetype.attack[unitInstance.currentLevel - 1];
         targetHp.onChangeHP(-damage);
         attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
     }
