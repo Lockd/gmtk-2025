@@ -1,17 +1,11 @@
-using DG.Tweening.Plugins;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Action Sheet", menuName = "ActionSheet")]
 public class ActionSheet : ScriptableObject
 {
     public string[] actionPriority;
-
     public string[] actionsByLevel;
-
     public string[] actionNames;
-
 
 
     [Header("Attack Attributes")]
@@ -23,9 +17,8 @@ public class ActionSheet : ScriptableObject
     public int firstSkillDamage;
     public int firstSkillCooldown;
 
+
     [Header("Skill 2 Attributes")]
     public int secondSkillDamage;
     public int secondSkillCooldown;
-
-
 }

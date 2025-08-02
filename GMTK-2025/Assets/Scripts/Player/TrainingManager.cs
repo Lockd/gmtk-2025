@@ -8,8 +8,10 @@ public class TrainingManager : MonoBehaviour
 {
     public List<UnitSO> unitTypes = new List<UnitSO>();
     public GameObject trainingUnitPrefab;
-    public GameObject fightinggUnitPrefab;
-    public List<UnitInstance> unitInstances = new List<UnitInstance>();
+    public GameObject fightingUnitPrefab;
+    public List<UnitInstance> trainingUnits = new List<UnitInstance>();
+    public List<UnitFighter> combatUnits = new List<UnitFighter>();
+
     [Header("Running settings")]
     [SerializeField] private Transform startPoint;
     [SerializeField] private Transform midPoint;
@@ -19,16 +21,16 @@ public class TrainingManager : MonoBehaviour
 
     public UnitDecisionManager decisionManager;
 
-    public static TrainingManager Instance { get; private set; }
+    public static TrainingManager instance { get; private set; }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        Instance = this;
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -38,7 +40,7 @@ public class TrainingManager : MonoBehaviour
         unitObject.transform.position = startPoint.position;
         UnitInstance unit = unitObject.GetComponent<UnitInstance>();
         unit.init(unitType);
-        unitInstances.Add(unit);
+        trainingUnits.Add(unit);
         startRunning(unit);
     }
 
@@ -65,21 +67,23 @@ public class TrainingManager : MonoBehaviour
     // TODO this is only need for testing
     private void spawnCombatUnit(UnitSO unitType)
     {
-        GameObject unitObject = Instantiate(fightinggUnitPrefab);
+        GameObject unitObject = Instantiate(fightingUnitPrefab);
         UnitInstance unitInstance = unitObject.GetComponent<UnitInstance>();
         unitInstance.init(unitType);
-        unitInstances.Add(unitInstance);
+        combatUnits.Add(unitInstance.GetComponent<UnitFighter>());
         unitInstance.onLevelUp();
         unitObject.transform.position = new Vector2(combatPoint.position.x + unitInstance.archetype.spawnOffset.x, combatPoint.position.y + unitInstance.archetype.spawnOffset.y);
     }
 
     public void deployUnit(UnitInstance unit)
     {
-        GameObject unitObject = Instantiate(fightinggUnitPrefab);
+        GameObject unitObject = Instantiate(fightingUnitPrefab);
         UnitInstance unitInstance = unitObject.GetComponent<UnitInstance>();
-        unitInstance.initOnDeploy(unit);
+        unitInstance.init(unit.archetype);
+        for (int i = 0; i < unit.currentLevel; i++) unitInstance.onLevelUp();
         unitObject.transform.position = new Vector2(combatPoint.position.x + unit.archetype.spawnOffset.x, combatPoint.position.y + unit.archetype.spawnOffset.y);
-    } 
+        combatUnits.Add(unitObject.GetComponent<UnitFighter>());
+    }
 
 #if UNITY_EDITOR
     private void Update()

@@ -22,7 +22,6 @@ public class DecisionBehaviour : MonoBehaviour
         deployButton.onClick.AddListener(Deploy);
     }
 
-
     void RunNextLap()
     {
         trainingManager.startRunning(thisUnit);

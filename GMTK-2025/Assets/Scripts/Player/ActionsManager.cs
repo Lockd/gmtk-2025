@@ -58,6 +58,7 @@ public class ActionsManager : MonoBehaviour
 
     string ChooseAction()
     {
+        if (actionSheet == null) return null;
         foreach (string actionName in actionSheet.actionPriority)
         {
             if (!IsActionAvailableAtLevel(actionName)) continue;

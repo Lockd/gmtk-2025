@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -15,7 +13,6 @@ public class Enemy : MonoBehaviour
     public Transform target;
 
     bool inRange;
-    // Start is called before the first frame update
     void Start()
     {
         moveSpeed = maxMoveSpeed;
@@ -23,7 +20,6 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), moveSpeed * Time.deltaTime);
@@ -37,9 +33,11 @@ public class Enemy : MonoBehaviour
 
     void DealDamage(HealthComponent health)
     {
+        // Hardcoded damage is wrong
         health.onChangeHP(-5);
     }
 
+    // Grisha: damage code can be reused
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Gate"))
@@ -51,13 +49,14 @@ public class Enemy : MonoBehaviour
             moveSpeed = 0;
         }
 
-        if(collision.CompareTag("Defender"))
+        if (collision.CompareTag("Defender"))
         {
             HealthComponent defenderHealth = collision.GetComponent<HealthComponent>();
             //DealDamage(defenderHealth);
             moveSpeed = 0;
         }
     }
+    // Grisha: ???
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Gate"))

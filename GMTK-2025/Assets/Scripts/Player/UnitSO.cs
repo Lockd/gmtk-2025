@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewUnitClass", menuName = "Units/UnitClass")]
 public class UnitSO : ScriptableObject
 {
+    public bool isEnemy = false;
+    public TARGET_TYPE targetType = TARGET_TYPE.Enemy;
     public List<Sprite> spritesPerLevel = new List<Sprite>();
     public Sprite icon;
     public int maxLevel = 3;
@@ -13,9 +15,7 @@ public class UnitSO : ScriptableObject
     public int attackPerLevel;
     public float levelUpTime = 3f;
     public float moveSpeed;
-    public float detectionRadius;
 
     public ActionSheet actionSheet;
-
     public Vector2 spawnOffset;
 }

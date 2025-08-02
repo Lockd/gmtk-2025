@@ -8,7 +8,15 @@ public class CastleManager : MonoBehaviour
     public int castleMaxHealth;
 
     public float castlePushForce;
-    // Start is called before the first frame update
+
+    public static CastleManager instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance != null) Destroy(gameObject);
+        else instance = this;
+    }
+
     void Start()
     {
         castleHealth.init(castleMaxHealth);

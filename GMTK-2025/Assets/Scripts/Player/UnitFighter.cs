@@ -1,94 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class UnitFighter : MonoBehaviour
 {
     public GameObject currentTarget;
-
-    public UnitSO archetype;
-
-    public CircleCollider2D enemyDetection;
-
-    float enemiesCheckTimer = 0f;
-
-    Transform dir;
-
+    private float enemiesCheckTimer = 0f;
     float moveSpeed;
-
     Vector2 startingPosition;
 
-    bool isEnemy;
+    [Header("Modules")]
+    [SerializeField] private UnitDetectionModule detection;
 
-    public ActionsManager actionsManager;
-    // Start is called before the first frame update
+    [Header("References")]
+    [SerializeField] private UnitInstance unitInstance;
+    [SerializeField] private ActionsManager actionsManager;
+
     void Start()
     {
-        archetype = GetComponent<UnitInstance>().archetype;
-        enemyDetection.radius = archetype.detectionRadius;
-        dir = GameObject.Find("TEMP_MovementDir").transform;
         startingPosition = transform.position;
-        moveSpeed = archetype.moveSpeed;
-        actionsManager.actionSheet = archetype.actionSheet;
+        moveSpeed = unitInstance.archetype.moveSpeed;
+        actionsManager.actionSheet = unitInstance.archetype.actionSheet;
     }
 
-
-    bool enemyPresent;
-    // Update is called once per frame
     void Update()
     {
-        if(currentTarget != null)
+        if (currentTarget != null)
         {
-            actionsManager.PerformAction(currentTarget);
+            actionsManager.PerformAction(currentTarget.gameObject);
         }
-        if (enemyPresent)
+        if (currentTarget != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(dir.position.x, transform.position.y), moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, currentTarget.transform.position, moveSpeed * Time.deltaTime);
         }
-        else if (!enemyPresent && Vector2.Distance(transform.position, startingPosition) > 0.1f)
+        else if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) > 0.1f)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(-dir.position.x, transform.position.y), moveSpeed * Time.deltaTime);
+            // TODO we should not move directly to the point, just towards the collider, to a shortest distance
+            transform.position = Vector2.MoveTowards(transform.position, CastleManager.instance.transform.position, moveSpeed * Time.deltaTime);
         }
-        if (Time.time >= enemiesCheckTimer)
+
+        if (currentTarget == null && Time.time >= enemiesCheckTimer)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if(enemies.Length > 0)
-            {
-                enemyPresent = true;
-            }
-            else
-            {
-                enemyPresent = false;
-            }
+            lookForTarget();
             enemiesCheckTimer = Time.time + 0.5f;
         }
     }
 
-    public void OnEnemyDetection(GameObject target)
+    public void lookForTarget()
     {
-        ChooseTarget(target);
         moveSpeed = 0;
+        Debug.Log("detection" + detection);
+        currentTarget = detection.getTarget();
     }
 
     public void OnEnemyDetectionEnd()
     {
-        moveSpeed = archetype.moveSpeed;
-    }
-
-
-    void ChooseTarget(GameObject t)
-    {
-        currentTarget = t;
+        moveSpeed = unitInstance.archetype.moveSpeed;
     }
 
     void PerformAction()
     {
         if (currentTarget != null)
         {
-            actionsManager.PerformAction(currentTarget);
+            actionsManager.PerformAction(currentTarget.gameObject);
         }
         else
         {
