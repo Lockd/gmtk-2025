@@ -28,12 +28,10 @@ MonoBehaviour:
   icon: {fileID: 0}
   purchasePrice: 5
   maxLevel: 10
-  health: 5
-  healthPerLevel: 3
+  health: 03000000030000000300000003000000030000000300000003000000030000000300000003000000
   attackRange: 1
   breakBetweenAttacks: 1
-  attack: 2
-  attackPerLevel: 1
+  attack: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
   levelUpTime: 0
   moveSpeed: 0.95
   actionSheet: {fileID: 0}

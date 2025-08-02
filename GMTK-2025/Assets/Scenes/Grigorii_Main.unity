@@ -5454,6 +5454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc16d400877ce3e449d510c526fcea02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -5461,6 +5462,8 @@ MonoBehaviour:
   maxHealth: 0
   hpSlider: {fileID: 1618776071}
   hpText: {fileID: 1194808878}
+  damageTextPrefab: {fileID: 0}
+  textSpawnPoint: {fileID: 0}
 --- !u!114 &1494266829
 MonoBehaviour:
   m_ObjectHideFlags: 0
