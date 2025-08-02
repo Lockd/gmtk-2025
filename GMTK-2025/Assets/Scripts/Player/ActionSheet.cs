@@ -10,6 +10,8 @@ public class ActionSheet : ScriptableObject
 
     public string[] actionsByLevel;
 
+    public string[] actionNames;
+
 
 
     [Header("Attack Attributes")]
@@ -17,49 +19,13 @@ public class ActionSheet : ScriptableObject
     public int attackCooldown;
 
 
-    [Header("Archer Skill 1 Attributes")]
-    public int piercingShotDamage;
-    public int piercingShotCooldown;
+    [Header("Skill 1 Attributes")]
+    public int firstSkillDamage;
+    public int firstSkillCooldown;
 
-    [Header("Archer Skill 2 Attributes")]
-    public int rainOfArrowsDamage;
-    public int rainOfArrowsCooldown;
-
-
-    [Header("Warrior Skill 1 Attributes")]
-    public int slashDamage;
-    public int slashCooldown;
-
-    [Header("Warrior Skill 2 Attributes")]
-    public int roarDamage;
-    public int roarCooldown;
-
-
-    [Header("Mage Skill 1 Attributes")]
-    public int fireNovaDamage;
-    public int fireNovaCooldown;
-
-    [Header("Mage Skill 2 Attributes")]
-    public int meteorDamage;
-    public int meteorCooldown;
-
-
-    [Header("Priest Skill 1 Attributes")]
-    public int massHealAmount;
-    public int massHealCooldown;  
-
-    [Header("Priest Skill 2 Attributes")]
-    public int haloDamageHeal;
-    public int haloCooldown;
-
-
-    [Header("Peasant Skill 1 Attributes")]
-    public int pierceDamage;
-    public int pierceCooldown;
-
-    [Header("Peasant Skill 2 Attributes")]
-    public int cleaveDamage;
-    public int cleaveCooldown;
+    [Header("Skill 2 Attributes")]
+    public int secondSkillDamage;
+    public int secondSkillCooldown;
 
 
 }

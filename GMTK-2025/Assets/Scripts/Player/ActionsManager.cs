@@ -23,19 +23,22 @@ public class ActionsManager : MonoBehaviour
         {
             int damage = 0;
             float cooldown = 1f;
-
-            if (actionToUse == "PiercingShot")
+            int actionIndex = 0;
+            if (actionToUse == "Skill1")
             {
-                damage = actionSheet.piercingShotDamage;
-                cooldown = actionSheet.piercingShotCooldown;
+                actionIndex = 1;
+                damage = actionSheet.firstSkillDamage;
+                cooldown = actionSheet.firstSkillCooldown;
             }
-            else if (actionToUse == "RainOfArrows")
+            else if (actionToUse == "Skill2")
             {
-                damage = actionSheet.rainOfArrowsDamage;
-                cooldown = actionSheet.rainOfArrowsCooldown;
+                actionIndex = 2;
+                damage = actionSheet.secondSkillDamage;
+                cooldown = actionSheet.secondSkillCooldown;
             }
             else if (actionToUse == "Attack")
             {
+                actionIndex = 0;
                 damage = actionSheet.attackDamage;
                 cooldown = actionSheet.attackCooldown;
             }
@@ -49,7 +52,7 @@ public class ActionsManager : MonoBehaviour
             cooldownTimers[actionToUse] = Time.time + cooldown;
             lastActionTime = Time.time;
 
-            Debug.Log($"{actionToUse} performed with {damage} damage!");
+            Debug.Log($"{actionSheet.actionNames[actionIndex]} performed with {damage} damage!");
         }
     }
 
