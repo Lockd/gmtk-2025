@@ -345,7 +345,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 448
+        y: 449
         width: 16
         height: 16
       alignment: 0
@@ -387,7 +387,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 448
+        y: 449
         width: 16
         height: 16
       alignment: 0
@@ -454,7 +454,7 @@ TextureImporter:
         width: 15
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,6 +462,48 @@ TextureImporter:
       bones: []
       spriteID: 72f7802a93c74f64ebb016e10840ee5a
       internalID: -97486060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_17
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 449
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15be361538a26b458fc2738806210fa
+      internalID: -1698629453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK_Tiles_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 432
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627333819e0d8ca42969be69136057c4
+      internalID: -688464892
       vertices: []
       indices: 
       edges: []
@@ -486,6 +528,8 @@ TextureImporter:
       GMTK_Tiles_14: -2001274983
       GMTK_Tiles_15: -1504358981
       GMTK_Tiles_16: -97486060
+      GMTK_Tiles_17: -1698629453
+      GMTK_Tiles_18: -688464892
       GMTK_Tiles_2: -1882917365
       GMTK_Tiles_3: -570197394
       GMTK_Tiles_4: -1527148811

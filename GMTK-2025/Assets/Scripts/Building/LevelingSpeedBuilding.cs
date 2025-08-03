@@ -10,11 +10,13 @@ public class LevelingSpeedBuilding : Building
         if (!canUpgrade()) return;
 
         level++;
-        if (level < reduceLevelingSpeed.Count)
+        buildingObject.SetActive(true);
+        if (level <= reduceLevelingSpeed.Count)
         {
-            float speedBoost = reduceLevelingSpeed[level];
+            float speedBoost = reduceLevelingSpeed[level-1];
             // Apply the speed boost to the building's functionality
             UpgradesManager.instance.onChangeReduceLevelingSpeed(speedBoost);
+            assignTexts();
         }
     }
 }
