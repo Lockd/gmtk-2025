@@ -2860,6 +2860,7 @@ MonoBehaviour:
   upgradePrice: 3c00000078000000c8000000
   levelText: {fileID: 65190672}
   costText: {fileID: 1176137168}
+  targetUnit: {fileID: 0}
   additionalUnits: 020000000300000004000000
 --- !u!1 &312414361
 GameObject:
@@ -5260,9 +5261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d458714f0172e43b4ea498af11d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingManager: {fileID: 122167339}
   thisUnit: {fileID: 11400000, guid: 699c24dd9b12d374c9dfd0fbd59780c6, type: 2}
-  cost: 20
+  priceText: {fileID: 1024858203}
 --- !u!114 &505610477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5916,9 +5916,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d458714f0172e43b4ea498af11d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingManager: {fileID: 122167339}
   thisUnit: {fileID: 11400000, guid: 417feb59b0330af4a99c32d6ecbde189, type: 2}
-  cost: 10
+  priceText: {fileID: 420854748}
 --- !u!114 &566071938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6119,6 +6118,10 @@ PrefabInstance:
       propertyPath: decisionManager
       value: 
       objectReference: {fileID: 1611734488}
+    - target: {fileID: 8277988021594758612, guid: e6d5725af0f7e9045a6de22622e17ae2, type: 3}
+      propertyPath: trainingUnitsText
+      value: 
+      objectReference: {fileID: 1071460727}
     - target: {fileID: 8277988021594758612, guid: e6d5725af0f7e9045a6de22622e17ae2, type: 3}
       propertyPath: fightingUnitPrefab
       value: 
@@ -6559,7 +6562,15 @@ MonoBehaviour:
   upgradePrice: 1e0000003700000046000000
   levelText: {fileID: 977255121}
   costText: {fileID: 231637531}
-  increasedDamage: 05000000080000000c000000
+  targetUnit: {fileID: 11400000, guid: 699c24dd9b12d374c9dfd0fbd59780c6, type: 2}
+  damageMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
+  healthMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
 --- !u!1 &617304837
 GameObject:
   m_ObjectHideFlags: 0
@@ -8325,7 +8336,15 @@ MonoBehaviour:
   upgradePrice: 280000004600000064000000
   levelText: {fileID: 1071508148}
   costText: {fileID: 1091595015}
-  increasedDamage: 04000000070000000a000000
+  targetUnit: {fileID: 11400000, guid: a9b26b6c678f01847b3938275e2664b2, type: 2}
+  damageMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
+  healthMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
 --- !u!1 &886156896
 GameObject:
   m_ObjectHideFlags: 0
@@ -9952,6 +9971,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049318230}
+  m_CullTransparentMesh: 1
+--- !u!1 &1071460725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071460726}
+  - component: {fileID: 1071460728}
+  - component: {fileID: 1071460727}
+  m_Layer: 5
+  m_Name: Units Limit Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1071460726
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071460725}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999818, y: 0.9999818, z: 0.9999818}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1657320217}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -597, y: 143}
+  m_SizeDelta: {x: 157.64, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1071460727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071460725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0 / 5
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1071460728
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071460725}
   m_CullTransparentMesh: 1
 --- !u!1 &1071508146
 GameObject:
@@ -11613,6 +11766,7 @@ MonoBehaviour:
   upgradePrice: 1e0000003200000078000000
   levelText: {fileID: 388679348}
   costText: {fileID: 541251323}
+  targetUnit: {fileID: 0}
   additionalLevels: 010000000100000001000000
 --- !u!1 &1263098794
 GameObject:
@@ -11862,9 +12016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d458714f0172e43b4ea498af11d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingManager: {fileID: 122167339}
   thisUnit: {fileID: 11400000, guid: 1cb79a997a6ea594589e76ac832fd96c, type: 2}
-  cost: 30
+  priceText: {fileID: 819104770}
 --- !u!114 &1304760217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12720,9 +12873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d458714f0172e43b4ea498af11d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingManager: {fileID: 122167339}
   thisUnit: {fileID: 11400000, guid: e41e57dcc4b90914c9b75924dde5acb4, type: 2}
-  cost: 25
+  priceText: {fileID: 1189336980}
 --- !u!114 &1425314410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14105,7 +14257,15 @@ MonoBehaviour:
   upgradePrice: 1e0000003200000050000000
   levelText: {fileID: 1124728704}
   costText: {fileID: 598365813}
-  increasedDamage: 030000000500000008000000
+  targetUnit: {fileID: 11400000, guid: 1cb79a997a6ea594589e76ac832fd96c, type: 2}
+  damageMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
+  healthMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
 --- !u!1 &1546257487
 GameObject:
   m_ObjectHideFlags: 0
@@ -15373,6 +15533,7 @@ RectTransform:
   - {fileID: 838119540}
   - {fileID: 1489635051}
   - {fileID: 1611734484}
+  - {fileID: 1071460726}
   - {fileID: 947496061}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16127,9 +16288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d458714f0172e43b4ea498af11d1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingManager: {fileID: 122167339}
   thisUnit: {fileID: 11400000, guid: a9b26b6c678f01847b3938275e2664b2, type: 2}
-  cost: 35
+  priceText: {fileID: 1023980312}
 --- !u!114 &1754568820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17039,7 +17199,15 @@ MonoBehaviour:
   upgradePrice: 140000001e00000032000000
   levelText: {fileID: 20203239}
   costText: {fileID: 955742299}
-  increasedDamage: 030000000400000005000000
+  targetUnit: {fileID: 11400000, guid: 417feb59b0330af4a99c32d6ecbde189, type: 2}
+  damageMultiplier:
+  - 0.3
+  - 0.6
+  - 1.2
+  healthMultiplier:
+  - 0.3
+  - 0.6
+  - 1.2
 --- !u!1 &2016706193
 GameObject:
   m_ObjectHideFlags: 0
@@ -17144,7 +17312,15 @@ MonoBehaviour:
   upgradePrice: 140000001e0000003c000000
   levelText: {fileID: 28344160}
   costText: {fileID: 324081113}
-  increasedDamage: 030000000500000009000000
+  targetUnit: {fileID: 11400000, guid: e41e57dcc4b90914c9b75924dde5acb4, type: 2}
+  damageMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
+  healthMultiplier:
+  - 0.1
+  - 0.2
+  - 0.3
 --- !u!1 &2023812874
 GameObject:
   m_ObjectHideFlags: 0
@@ -17266,12 +17442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reduceLevelingSpeed: 0
   maxLevel: 3
-  maxTrainingUnits: 5
-  additionalPeasantDamage: 0
-  additionalWarriorDamage: 0
-  additionalArcherDamage: 0
-  additionalPriestDamage: 0
-  additionalMageDamage: 0
+  additionalTrainingUnits: 0
 --- !u!1 &2065652898
 GameObject:
   m_ObjectHideFlags: 0

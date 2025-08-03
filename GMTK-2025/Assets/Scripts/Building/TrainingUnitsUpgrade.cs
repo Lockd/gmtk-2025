@@ -13,9 +13,10 @@ public class TrainingUnitsUpgrade : Building
         buildingObject.SetActive(true);
         if (level <= additionalUnits.Count)
         {
-            int units = additionalUnits[level -1];
+            int units = additionalUnits[level - 1];
             UpgradesManager.instance.OnChangeMaxUnitsPresent(units);
             assignTexts();
         }
+        afterUpgrade();
     }
 }

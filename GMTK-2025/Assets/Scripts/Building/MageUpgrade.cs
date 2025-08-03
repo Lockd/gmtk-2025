@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MageUpgrade : Building
 {
-    public List<int> increasedDamage = new List<int>();
+    public List<float> damageMultiplier = new List<float>();
+    public List<float> healthMultiplier = new List<float>();
     public override void applyUpgrade()
     {
         if (!canUpgrade()) return;
@@ -12,10 +13,16 @@ public class MageUpgrade : Building
         level++;
         buildingObject.SetActive(true);
         recruitmentObject.SetActive(true);
-        if (level <= increasedDamage.Count)
+        if (level <= damageMultiplier.Count)
         {
-            UpgradesManager.instance.onIncreaseDamage(increasedDamage[level - 1], "Mage");
+            UpgradesManager.instance.changeDamageMultiplier(damageMultiplier[level - 1], targetUnit);
             assignTexts();
         }
+        if (level <= healthMultiplier.Count)
+        {
+            UpgradesManager.instance.changeHealthMultiplier(healthMultiplier[level - 1], targetUnit);
+            assignTexts();
+        }
+        afterUpgrade();
     }
 }

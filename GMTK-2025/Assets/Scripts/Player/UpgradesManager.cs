@@ -6,12 +6,9 @@ public class UpgradesManager : MonoBehaviour
 {
     public float reduceLevelingSpeed = 0f;
     public int maxLevel = 3;
-    public int maxTrainingUnits = 5;
-    public int additionalPeasantDamage = 0;
-    public int additionalWarriorDamage = 0;
-    public int additionalArcherDamage = 0;
-    public int additionalPriestDamage = 0;
-    public int additionalMageDamage = 0;
+    public int additionalTrainingUnits = 0;
+    public Dictionary<UnitSO, float> damageUpgrades = new Dictionary<UnitSO, float>();
+    public Dictionary<UnitSO, float> healthUpgrades = new Dictionary<UnitSO, float>();
     public static UpgradesManager instance { get; private set; }
 
     private void Awake()
@@ -29,38 +26,25 @@ public class UpgradesManager : MonoBehaviour
         reduceLevelingSpeed += speedBoost;
     }
 
-    public void onIncreaseDamage(int damage, string className)
+    public void changeDamageMultiplier(float damage, UnitSO archetype)
     {
-        if(className == "Peasant")
-        {
-            additionalPeasantDamage += damage;
-        }
-        else if (className == "Warrior")
-        {
-            additionalWarriorDamage += damage;
-        }
-        else if (className == "Archer")
-        {
-            additionalArcherDamage += damage;
-        }
-        else if (className == "Priest")
-        {
-            additionalPriestDamage += damage;
-        }
-        else if (className == "Mage")
-        {
-            additionalMageDamage += damage;
-        }
+
+        damageUpgrades[archetype] = damage;
+    }
+
+    public void changeHealthMultiplier(float health, UnitSO archetype)
+    {
+        healthUpgrades[archetype] = health;
     }
 
     public void onChangeMaxLevel(int level)
     {
-        maxLevel+= level;
+        maxLevel += level;
     }
 
     public void OnChangeMaxUnitsPresent(int units)
     {
-        maxTrainingUnits += units;
+        additionalTrainingUnits += units;
     }
 
 }

@@ -7,6 +7,7 @@ public class UnitFighter : MonoBehaviour
     public GameObject currentTarget;
     private float enemiesCheckTimer = 0f;
     private float attackAt = 0f;
+    private float damageMultiplier = 0;
     Vector2 startingPosition;
 
     [Header("Modules")]
@@ -20,6 +21,10 @@ public class UnitFighter : MonoBehaviour
     {
         startingPosition = transform.position;
         actionsManager.actionSheet = unitInstance.archetype.actionSheet;
+
+        damageMultiplier = UpgradesManager.instance.damageUpgrades.ContainsKey(unitInstance.archetype)
+            ? UpgradesManager.instance.damageUpgrades[unitInstance.archetype]
+            : 0;
 
         unitInstance.hp.onDeath.AddListener(onDeath);
     }
@@ -90,7 +95,7 @@ public class UnitFighter : MonoBehaviour
             return;
         }
 
-        int damage = unitInstance.archetype.attack[unitInstance.currentLevel - 1];
+        int damage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * (1 + damageMultiplier));
         targetHp.onChangeHP(-damage);
         attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
     }

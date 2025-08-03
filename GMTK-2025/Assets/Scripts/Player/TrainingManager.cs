@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using System.IO.Compression;
+using TMPro;
 
 public class TrainingManager : MonoBehaviour
 {
+    public int maxHiredUnits = 5;
     public List<UnitSO> unitTypes = new List<UnitSO>();
     public GameObject trainingUnitPrefab;
     public GameObject fightingUnitPrefab;
     public List<UnitInstance> trainingUnits = new List<UnitInstance>();
     public List<UnitFighter> combatUnits = new List<UnitFighter>();
+    [Header("UI")]
+    [SerializeField] private TMP_Text trainingUnitsText;
 
     [Header("Running settings")]
     [SerializeField] private Transform startPoint;
@@ -42,6 +45,7 @@ public class TrainingManager : MonoBehaviour
         unit.init(unitType);
         trainingUnits.Add(unit);
         startRunning(unit);
+        updateUI();
     }
 
     public void startRunning(UnitInstance unit)
@@ -82,12 +86,28 @@ public class TrainingManager : MonoBehaviour
         unitInstance.init(unit.archetype);
         for (int i = 0; i < unit.currentLevel; i++) unitInstance.onLevelUp();
         unitObject.transform.position = new Vector2(combatPoint.position.x + unit.archetype.spawnOffset.x, combatPoint.position.y + unit.archetype.spawnOffset.y);
+        trainingUnits.Remove(unit);
         combatUnits.Add(unitObject.GetComponent<UnitFighter>());
     }
 
     public void onUnitDeath(UnitFighter unit)
     {
         combatUnits.Remove(unit);
+        updateUI();
+    }
+
+    private void updateUI()
+    {
+        int maxUnits = maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
+        int currentUnits = trainingUnits.Count + combatUnits.Count;
+        trainingUnitsText.text = currentUnits + " / " + maxUnits;
+    }
+
+    public bool canSpawnMoreUnits()
+    {
+        int maxUnits = TrainingManager.instance.maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
+        int currentUnits = TrainingManager.instance.trainingUnits.Count + TrainingManager.instance.combatUnits.Count;
+        return currentUnits < maxUnits;
     }
 
 #if UNITY_EDITOR

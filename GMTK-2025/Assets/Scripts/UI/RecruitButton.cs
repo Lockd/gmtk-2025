@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RecruitButton : MonoBehaviour
 {
-    public TrainingManager trainingManager;
     public UnitSO thisUnit;
     Button thisButton;
+    public TMP_Text priceText;
 
-    public int cost;
     void Start()
     {
         thisButton = GetComponent<Button>();
         thisButton.onClick.AddListener(Recruit);
+        priceText.text = thisUnit.purchasePrice.ToString();
     }
 
     void Recruit()
     {
-        if (GoldManager.instance.canAfford(cost))
+        int cost = thisUnit.purchasePrice;
+        if (GoldManager.instance.canAfford(cost) && TrainingManager.instance.canSpawnMoreUnits())
         {
             GoldManager.instance.changeGold(-cost);
-            trainingManager.onSpawnTrainingUnit(thisUnit);
+            TrainingManager.instance.onSpawnTrainingUnit(thisUnit);
         }
     }
 }

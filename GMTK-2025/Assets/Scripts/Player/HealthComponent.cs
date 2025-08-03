@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using JetBrains.Annotations;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -23,12 +24,8 @@ public class HealthComponent : MonoBehaviour
     {
         this.maxHealth = maxHealth;
         currentHealth = maxHealth;
-        if (hpSlider)
-        {
-            hpSlider.maxValue = maxHealth;
-            hpSlider.value = currentHealth;
-        }
-        if (hpText) hpText.text = currentHealth + "/" + maxHealth;
+
+        updateUI();
     }
 
     public void onChangeHP(int amount)
@@ -48,14 +45,31 @@ public class HealthComponent : MonoBehaviour
             isDead = true;
             onDeath.Invoke();
         }
-        if (hpSlider) hpSlider.value = currentHealth;
-        if (hpText) hpText.text = currentHealth + "/" + maxHealth;
+        updateUI();
     }
 
     public void onChangeMaxHP(int newMaxHP)
     {
-        maxHealth = newMaxHP;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        UnitInstance unitInstance = GetComponent<UnitInstance>();
+        float healthMultiplier = 0;
+        bool hasHealthUpgrade = UpgradesManager.instance.healthUpgrades.ContainsKey(unitInstance.archetype);
+        if (unitInstance && hasHealthUpgrade)
+        {
+            healthMultiplier = UpgradesManager.instance.healthUpgrades[unitInstance.archetype];
+        }
+        maxHealth = (int)(newMaxHP * (1 + healthMultiplier));
+        currentHealth = maxHealth;
+        updateUI();
+    }
+
+    private void updateUI()
+    {
+        if (hpSlider)
+        {
+            hpSlider.maxValue = maxHealth;
+            hpSlider.value = currentHealth;
+        }
+        if (hpText) hpText.text = currentHealth + "/" + maxHealth;
     }
 }
 

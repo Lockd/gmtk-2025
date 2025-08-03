@@ -13,9 +13,10 @@ public class MaxLevelUpgrade : Building
         buildingObject.SetActive(true);
         if (level <= additionalLevels.Count)
         {
-            int levels = additionalLevels[level-1];
+            int levels = additionalLevels[level - 1];
             UpgradesManager.instance.onChangeMaxLevel(levels);
             assignTexts();
         }
+        afterUpgrade();
     }
 }
