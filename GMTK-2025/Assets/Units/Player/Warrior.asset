@@ -18,8 +18,8 @@ MonoBehaviour:
   AOERadius: 2
   spritesPerLevel:
   - {fileID: -1298783118, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
-  - {fileID: -1298783118, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
-  - {fileID: -840599850, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -2098022306, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
+  - {fileID: -707100445, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
   - {fileID: -840599850, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
   icon: {fileID: -1415957858, guid: abae6a78af560374ea988de174301642, type: 3}
   purchasePrice: 0

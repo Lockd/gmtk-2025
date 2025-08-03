@@ -14671,6 +14671,10 @@ PrefabInstance:
       value: 1.21
       objectReference: {fileID: 0}
     - target: {fileID: 8277988021594758612, guid: e6d5725af0f7e9045a6de22622e17ae2, type: 3}
+      propertyPath: maxHiredUnits
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8277988021594758612, guid: e6d5725af0f7e9045a6de22622e17ae2, type: 3}
       propertyPath: decisionManager
       value: 
       objectReference: {fileID: 1611734488}
@@ -15112,21 +15116,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  maxLevel: 3
+  maxLevel: 20
   buildingObject: {fileID: 2016706193}
   recruitmentObject: {fileID: 463410027}
-  upgradePrice: 1e0000003700000046000000
+  upgradePrice: 0a0000000f00000014000000190000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e000000
   levelText: {fileID: 977255121}
   costText: {fileID: 231637531}
   targetUnit: {fileID: 11400000, guid: 699c24dd9b12d374c9dfd0fbd59780c6, type: 2}
   damageMultiplier:
-  - 0
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
   healthMultiplier:
-  - 0
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
 --- !u!1 &617304837
 GameObject:
   m_ObjectHideFlags: 0
@@ -16404,21 +16442,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  maxLevel: 3
+  maxLevel: 20
   buildingObject: {fileID: 1495609549}
   recruitmentObject: {fileID: 1872032676}
-  upgradePrice: 1e0000003700000046000000
+  upgradePrice: 1400000014000000140000001900000019000000190000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e000000
   levelText: {fileID: 1087056492}
   costText: {fileID: 754912592}
   targetUnit: {fileID: 11400000, guid: 587022d73ab13b94d8836ebdc554babc, type: 2}
   damageMultiplier:
-  - 0.1
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
   healthMultiplier:
-  - 0.1
-  - 0.2
-  - 0.3
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
 --- !u!1 &819104768
 GameObject:
   m_ObjectHideFlags: 0
@@ -16775,18 +16847,52 @@ MonoBehaviour:
   maxLevel: 3
   buildingObject: {fileID: 1303193908}
   recruitmentObject: {fileID: 897417556}
-  upgradePrice: 280000004600000064000000
+  upgradePrice: 2800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000
   levelText: {fileID: 1071508148}
   costText: {fileID: 1091595015}
   targetUnit: {fileID: 11400000, guid: a9b26b6c678f01847b3938275e2664b2, type: 2}
   damageMultiplier:
-  - 0.1
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
   healthMultiplier:
-  - 0.1
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
 --- !u!1 &891530018
 GameObject:
   m_ObjectHideFlags: 0
@@ -17493,8 +17599,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2eda57f54215d664283854113ea571e3, type: 2}
   - {fileID: 11400000, guid: edb0a467f0cedfa438083bf3066d50e4, type: 2}
   - {fileID: 11400000, guid: b5d92f6a59cd3034eb4008248988d5a6, type: 2}
+  - {fileID: 11400000, guid: 5c4facb21364f1045ad6b6f1bc0c5be4, type: 2}
+  - {fileID: 11400000, guid: 5c278886264fc594bbd40556617f7a22, type: 2}
+  - {fileID: 11400000, guid: 4bb4ba26b7530bb40837da28a461e533, type: 2}
+  - {fileID: 11400000, guid: 7f69e77204673834db80f4a8a1606360, type: 2}
   startSpawningAfter: 2
-  wavesCooldown: 8
+  wavesCooldown: 14
   spawnedEnemies: []
   enemyPrefab: {fileID: 6602026790839078009, guid: 48222ecae3fea34428bdee74074c3567, type: 3}
   spawnLocation: {fileID: 1712070913}
@@ -24234,18 +24344,52 @@ MonoBehaviour:
   maxLevel: 3
   buildingObject: {fileID: 1220821182}
   recruitmentObject: {fileID: 1167061743}
-  upgradePrice: 140000001e0000003c000000
+  upgradePrice: 1400000014000000140000001400000014000000140000001400000014000000140000001400000014000000140000001400000014000000140000001400000014000000140000001400000014000000
   levelText: {fileID: 28344160}
   costText: {fileID: 324081113}
   targetUnit: {fileID: 11400000, guid: e41e57dcc4b90914c9b75924dde5acb4, type: 2}
   damageMultiplier:
-  - 0.1
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
   healthMultiplier:
-  - 0.1
-  - 0.2
-  - 0.3
+  - 1
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
+  - 1.7
 --- !u!1 &2023812874
 GameObject:
   m_ObjectHideFlags: 0
@@ -26684,6 +26828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 804706256185912027, guid: c95bd15aff12ef34999904d7bc82eaae, type: 3}
+      propertyPath: gold
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 804706256185912027, guid: c95bd15aff12ef34999904d7bc82eaae, type: 3}
       propertyPath: goldText
       value: 
