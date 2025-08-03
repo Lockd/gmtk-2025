@@ -59,7 +59,7 @@ public class UnitFighter : MonoBehaviour
         if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) <= 0.1f && !unitInstance.archetype.isEnemy)
         {
             unitInstance.animationHandler.playWalkingAnimation(false);
-            unitInstance.cosmetics.flipSprite(true);
+            unitInstance.cosmetics.flipSprite(false);
         }
 
         // Try to search for target every 0.3 seconds
@@ -153,23 +153,15 @@ public class UnitFighter : MonoBehaviour
         if (unitInstance.archetype.attackType == ATTACK_TYPE.Melee_AOE) attackSound = "event:/SFX/char/char_melee";
         if (unitInstance.archetype.attackType == ATTACK_TYPE.Melee) attackSound = "event:/SFX/char/char_melee";
 
-        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance(attackSound);
-        sound.setVolume(MusicManager.instance.volume);
-        sound.start();
-        sound.release();
+        FMODUnity.RuntimeManager.PlayOneShot(attackSound);
     }
 
     private void onGetDamage()
     {
         if (unitInstance.hp.isDead) return;
-        string soundName = "event:/SFX/char/char_dmg";
-        if (unitInstance.archetype.isEnemy) soundName = "event:/SFX/enemy/enemy_dmg";
-        if (!unitInstance.archetype.isEnemy) soundName = "event:/SFX/char/char_dmg";
 
-        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance(soundName);
-        sound.setVolume(MusicManager.instance.volume);
-        sound.start();
-        sound.release();
+        if (unitInstance.archetype.isEnemy) FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/enemy/enemy_dmg");
+        if (!unitInstance.archetype.isEnemy) FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/char/char_dmg");
     }
 
     public void lookForTarget()
@@ -188,10 +180,7 @@ public class UnitFighter : MonoBehaviour
 
         unitInstance.animationHandler.playDeathAnimation();
 
-        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemy/enemy_death");
-        sound.setVolume(MusicManager.instance.volume);
-        sound.start();
-        sound.release();
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/enemy/enemy_death");
 
         Destroy(gameObject, 0.8f);
     }
