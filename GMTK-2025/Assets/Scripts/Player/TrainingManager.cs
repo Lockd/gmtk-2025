@@ -64,8 +64,8 @@ public class TrainingManager : MonoBehaviour
         runningSequence.OnComplete(() =>
         {
             unitInstancesAwaitingDecision.Add(unit);
-            decisionManager.SetDecisions();
             unit.onLevelUp();
+            decisionManager.SetDecisions();
             unit.animationHandler.playWalkingAnimation(false);
         });
     }
