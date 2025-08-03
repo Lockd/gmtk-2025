@@ -11749,7 +11749,7 @@ MonoBehaviour:
   maxLevel: 3
   buildingObject: {fileID: 1937622338}
   recruitmentObject: {fileID: 0}
-  upgradePrice: 0a0000000f00000014000000190000001e000000
+  upgradePrice: 1400000023000000320000004100000050000000
   levelText: {fileID: 65190672}
   costText: {fileID: 1176137168}
   targetUnit: {fileID: 0}
@@ -26961,12 +26961,16 @@ PrefabInstance:
         is key!
       objectReference: {fileID: 0}
     - target: {fileID: 6639809960704421038, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: upgradePrice.Array.data[1]
+      propertyPath: upgradePrice.Array.data[0]
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6639809960704421038, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: upgradePrice.Array.data[2]
+      propertyPath: upgradePrice.Array.data[1]
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639809960704421038, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
+      propertyPath: upgradePrice.Array.data[2]
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8832934868396032673, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_Sprite
