@@ -1671,18 +1671,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 295016922683452401, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 943105658459610961, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
-      propertyPath: panel
-      value: 
-      objectReference: {fileID: 1666392340}
-    - target: {fileID: 943105658459610961, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 1666392339}
     - target: {fileID: 1267488210263061926, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5692048
@@ -1732,16 +1720,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
---- !u!223 &1666392339 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 6726930737791704475, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
-  m_PrefabInstance: {fileID: 1666392338}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1666392340 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 295016922683452401, guid: 52207db5ace58024ab38daf0935d2fbc, type: 3}
-  m_PrefabInstance: {fileID: 1666392338}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1846750605
 GameObject:
   m_ObjectHideFlags: 0

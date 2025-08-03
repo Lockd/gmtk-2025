@@ -16,6 +16,7 @@ public class TrainingUnitsUpgrade : Building
             int units = additionalUnits[level - 1];
             UpgradesManager.instance.OnChangeMaxUnitsPresent(units);
         }
+        TrainingManager.instance.updateUI();
         afterUpgrade();
     }
 }
