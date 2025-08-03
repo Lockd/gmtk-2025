@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1368bc53d1acd547ae9bb3c572aef1e, type: 3}
+  m_Name: Fast_Goblin
+  m_EditorClassIdentifier: 
+  isEnemy: 1
+  targetType: 0
+  attackType: 0
+  AOERadius: 2
+  spritesPerLevel:
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
+  icon: {fileID: 0}
+  purchasePrice: 0
+  goldOnKill: 1
+  maxLevel: 10
+  health: 14000000230000003c00000064000000640000006400000064000000640000006400000064000000
+  attackRange: 1
+  breakBetweenAttacks: 1
+  attack: 050000000a0000000f00000019000000190000001900000019000000190000001900000019000000
+  levelUpTime: 0
+  moveSpeed: 3
+  actionSheet: {fileID: 0}
+  spawnOffset: {x: 0, y: 0}
