@@ -25,6 +25,7 @@ public class UnitFighter : MonoBehaviour
         damageMultiplier = UpgradesManager.instance.getDamageMultiplier(unitInstance.archetype);
 
         unitInstance.hp.onDeath.AddListener(onDeath);
+        unitInstance.hp.onGetDamage.AddListener(onGetDamage);
     }
 
     void Update()
@@ -53,6 +54,11 @@ public class UnitFighter : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
             unitInstance.animationHandler.playWalkingAnimation(true);
+            unitInstance.cosmetics.flipSprite(true);
+        }
+        if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) <= 0.1f && !unitInstance.archetype.isEnemy)
+        {
+            unitInstance.animationHandler.playWalkingAnimation(false);
             unitInstance.cosmetics.flipSprite(true);
         }
 
@@ -107,6 +113,7 @@ public class UnitFighter : MonoBehaviour
         {
             targetHp.onChangeHP(-damage);
             attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
+            playAttackSound();
             return;
         }
 
@@ -134,6 +141,35 @@ public class UnitFighter : MonoBehaviour
         int mainDamage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * damageMultiplier);
         targetHp.onChangeHP(-mainDamage);
         attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
+        playAttackSound();
+    }
+
+    private void playAttackSound()
+    {
+        string attackSound = "event:/SFX/char/char_melee";
+
+        if (unitInstance.archetype.attackType == ATTACK_TYPE.Ranged) attackSound = "event:/SFX/char/char_bow";
+        if (unitInstance.archetype.attackType == ATTACK_TYPE.Ranged_AOE) attackSound = "event:/SFX/char/char_fireball";
+        if (unitInstance.archetype.attackType == ATTACK_TYPE.Melee_AOE) attackSound = "event:/SFX/char/char_melee";
+        if (unitInstance.archetype.attackType == ATTACK_TYPE.Melee) attackSound = "event:/SFX/char/char_melee";
+
+        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance(attackSound);
+        sound.setVolume(MusicManager.instance.volume);
+        sound.start();
+        sound.release();
+    }
+
+    private void onGetDamage()
+    {
+        if (unitInstance.hp.isDead) return;
+        string soundName = "event:/SFX/char/char_dmg";
+        if (unitInstance.archetype.isEnemy) soundName = "event:/SFX/enemy/enemy_dmg";
+        if (!unitInstance.archetype.isEnemy) soundName = "event:/SFX/char/char_dmg";
+
+        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance(soundName);
+        sound.setVolume(MusicManager.instance.volume);
+        sound.start();
+        sound.release();
     }
 
     public void lookForTarget()
@@ -152,7 +188,10 @@ public class UnitFighter : MonoBehaviour
 
         unitInstance.animationHandler.playDeathAnimation();
 
-        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/enemy/enemy_death");
+        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/enemy/enemy_death");
+        sound.setVolume(MusicManager.instance.volume);
+        sound.start();
+        sound.release();
 
         Destroy(gameObject, 0.8f);
     }

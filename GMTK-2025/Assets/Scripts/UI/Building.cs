@@ -46,6 +46,11 @@ public abstract class Building : MonoBehaviour
             button.interactable = false;
         }
         assignTexts();
+
+        FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/UI/unit_purchase");
+        sound.setVolume(MusicManager.instance.volume);
+        sound.start();
+        sound.release();
     }
 
     public void assignTexts()

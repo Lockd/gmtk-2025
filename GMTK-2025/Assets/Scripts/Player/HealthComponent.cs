@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
 {
     public bool isDead = false;
     public UnityEvent onDeath;
+    public UnityEvent onGetDamage;
     public int currentHealth;
     public int maxHealth;
 

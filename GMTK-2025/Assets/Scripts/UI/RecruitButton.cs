@@ -24,6 +24,11 @@ public class RecruitButton : MonoBehaviour
         {
             GoldManager.instance.changeGold(-cost);
             TrainingManager.instance.onSpawnTrainingUnit(thisUnit);
+            // Play the sound and adjust parameters as needed
+            FMOD.Studio.EventInstance sound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/UI/upgrades");
+            sound.setVolume(MusicManager.instance.volume);
+            sound.start();
+            sound.release();
         }
     }
 }
