@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Diagnostics.Contracts;
+using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
-public abstract class Building : MonoBehaviour
+public abstract class Building : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     // public string buildingName;
     // public string buildingDescription;
@@ -16,6 +19,12 @@ public abstract class Building : MonoBehaviour
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI costText;
     public UnitSO targetUnit;
+
+    public GameObject descriptionBox;
+    public TextMeshProUGUI descriptionText;
+    public Image descriptionIcon;
+
+    public string buildingDescription;
 
     private void Awake()
     {
@@ -55,5 +64,17 @@ public abstract class Building : MonoBehaviour
             costText.text = upgradePrice[level] + "";
         else
             costText.text = "MAX";
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        descriptionBox.SetActive(true);
+        descriptionText.text = buildingDescription;
+        descriptionIcon.sprite = transform.GetChild(0).GetComponent<Image>().sprite;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        descriptionBox.SetActive(false);
     }
 }
