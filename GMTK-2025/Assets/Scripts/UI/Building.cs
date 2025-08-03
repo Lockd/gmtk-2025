@@ -50,7 +50,7 @@ public abstract class Building : MonoBehaviour
 
     public void assignTexts()
     {
-        levelText.text = "Lvl: " + level;
+        levelText.text = level.ToString();
         if (level < upgradePrice.Count)
             costText.text = upgradePrice[level] + "";
         else
