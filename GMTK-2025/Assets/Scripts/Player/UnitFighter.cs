@@ -144,7 +144,6 @@ public class UnitFighter : MonoBehaviour
 
     private void onDeath()
     {
-        unitInstance.cosmetics.setSprite(null);
         if (unitInstance.archetype.isEnemy)
         {
             EnemySpawner.instance.onUnitDeath(this);
@@ -154,6 +153,6 @@ public class UnitFighter : MonoBehaviour
 
         unitInstance.animationHandler.playDeathAnimation();
 
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.8f);
     }
 }
