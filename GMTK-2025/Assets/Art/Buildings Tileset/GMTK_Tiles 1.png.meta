@@ -13214,7 +13214,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GMTK_Tiles 1_624
+      name: barb_house
       rect:
         serializedVersion: 2
         x: 48
@@ -13223,7 +13223,7 @@ TextureImporter:
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -41898,7 +41898,6 @@ TextureImporter:
       GMTK_Tiles 1_621: -1974956857
       GMTK_Tiles 1_622: 1573937935
       GMTK_Tiles 1_623: 814040857
-      GMTK_Tiles 1_624: 1709469313
       GMTK_Tiles 1_625: -1831102914
       GMTK_Tiles 1_626: 1800194065
       GMTK_Tiles 1_627: 832987941
@@ -42314,6 +42313,7 @@ TextureImporter:
       GMTK_Tiles 1_997: -586331753
       GMTK_Tiles 1_998: -1342140743
       GMTK_Tiles 1_999: -613944892
+      barb_house: 1709469313
       duck: 1811834651
       unicorn: -1826098369
   mipmapLimitGroupName: 
