@@ -11825,11 +11825,11 @@ MonoBehaviour:
   maxLevel: 3
   buildingObject: {fileID: 1937622338}
   recruitmentObject: {fileID: 0}
-  upgradePrice: 3c00000078000000c8000000
+  upgradePrice: 0a0000000f00000014000000190000001e000000
   levelText: {fileID: 65190672}
   costText: {fileID: 1176137168}
   targetUnit: {fileID: 0}
-  additionalUnits: 020000000300000004000000
+  additionalUnits: 0100000001000000010000000100000001000000
 --- !u!1 &312414361
 GameObject:
   m_ObjectHideFlags: 0
@@ -15125,7 +15125,7 @@ MonoBehaviour:
   maxLevel: 20
   buildingObject: {fileID: 2016706193}
   recruitmentObject: {fileID: 463410027}
-  upgradePrice: 0a0000000f00000014000000190000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e000000
+  upgradePrice: 14000000230000003200000041000000500000005f0000006e0000007d0000008c0000009b000000aa000000b9000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000
   levelText: {fileID: 977255121}
   costText: {fileID: 231637531}
   targetUnit: {fileID: 11400000, guid: 699c24dd9b12d374c9dfd0fbd59780c6, type: 2}
@@ -15632,7 +15632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -15640,7 +15640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -15680,11 +15680,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 212
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -128.455
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2286645753094275711, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15737,10 +15737,6 @@ PrefabInstance:
     - target: {fileID: 9174391592480078216, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_Name
       value: Upgrade Max Level
-      objectReference: {fileID: 0}
-    - target: {fileID: 9174391592480078216, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6639809960704421038, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
@@ -16455,7 +16451,7 @@ MonoBehaviour:
   maxLevel: 20
   buildingObject: {fileID: 1495609549}
   recruitmentObject: {fileID: 1872032676}
-  upgradePrice: 1400000014000000140000001900000019000000190000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e0000001e000000
+  upgradePrice: 14000000230000003200000041000000500000005f0000006e0000007d0000008c0000009b000000aa000000b9000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000
   levelText: {fileID: 1087056492}
   costText: {fileID: 754912592}
   targetUnit: {fileID: 11400000, guid: 587022d73ab13b94d8836ebdc554babc, type: 2}
@@ -16820,7 +16816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -479.0664, y: -400}
+  m_AnchoredPosition: {x: -552.70276, y: -400}
   m_SizeDelta: {x: 760.7446, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &838119542
@@ -16857,7 +16853,7 @@ MonoBehaviour:
   maxLevel: 3
   buildingObject: {fileID: 1303193908}
   recruitmentObject: {fileID: 897417556}
-  upgradePrice: 2800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000280000002800000028000000
+  upgradePrice: 14000000230000003200000041000000500000005f0000006e0000007d0000008c0000009b000000aa000000b9000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000
   levelText: {fileID: 1071508148}
   costText: {fileID: 1091595015}
   targetUnit: {fileID: 11400000, guid: a9b26b6c678f01847b3938275e2664b2, type: 2}
@@ -17252,7 +17248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -752, y: -314.4}
+  m_AnchoredPosition: {x: -874, y: -314.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947496062
@@ -17613,9 +17609,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c278886264fc594bbd40556617f7a22, type: 2}
   - {fileID: 11400000, guid: 4bb4ba26b7530bb40837da28a461e533, type: 2}
   - {fileID: 11400000, guid: 7f69e77204673834db80f4a8a1606360, type: 2}
+  - {fileID: 11400000, guid: d820b909aa21e8544ad49aa7b0862cc5, type: 2}
+  - {fileID: 11400000, guid: 3518686bfde22f14c94f0923a4c777ee, type: 2}
+  - {fileID: 11400000, guid: 99641cac41c273149b89abfbe50d82ae, type: 2}
+  - {fileID: 11400000, guid: 406193ff07cba374c8eda33bbe0c9e90, type: 2}
+  - {fileID: 11400000, guid: 1c74d465d58aa794a90cc8e20041ee03, type: 2}
+  - {fileID: 11400000, guid: 52b64fd3f262ce942a135a35cd1469ca, type: 2}
+  - {fileID: 11400000, guid: 881986da3bf236249b343c1d84f1cb37, type: 2}
+  - {fileID: 11400000, guid: 237f737a07d488c45b512bca5abd17e9, type: 2}
+  - {fileID: 11400000, guid: a1bb11d8c3a11304e99b21b5443ae628, type: 2}
+  - {fileID: 11400000, guid: 8d4aa986ed9d58d4cb9ea4cc88a691ba, type: 2}
+  - {fileID: 11400000, guid: 7e3b2f3bf1bfa5e4bbe0846c9070a4ce, type: 2}
   startSpawningAfter: 2
-  wavesCooldown: 14
-  isLastWave: 0
+  wavesCooldown: 16
   spawnedEnemies: []
   enemyPrefab: {fileID: 6602026790839078009, guid: 48222ecae3fea34428bdee74074c3567, type: 3}
   spawnLocation: {fileID: 1712070913}
@@ -18770,7 +18776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 496, y: -402.39}
+  m_AnchoredPosition: {x: 420, y: -402.39}
   m_SizeDelta: {x: 1051, y: 256.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1105742549
@@ -20485,7 +20491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519.283, y: -65.02}
+  m_AnchoredPosition: {x: -592.9194, y: -65.02}
   m_SizeDelta: {x: 731.7, y: 229.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396765272
@@ -21143,7 +21149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -432, y: -315}
+  m_AnchoredPosition: {x: -508, y: -315}
   m_SizeDelta: {x: 1061.825, y: 228.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1489635052
@@ -22348,7 +22354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: -4}
+  m_AnchoredPosition: {x: 30.5, y: -4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1609980461
@@ -24355,7 +24361,7 @@ MonoBehaviour:
   maxLevel: 3
   buildingObject: {fileID: 1220821182}
   recruitmentObject: {fileID: 1167061743}
-  upgradePrice: 1400000014000000140000001400000014000000140000001400000014000000140000001400000014000000140000001400000014000000140000001400000014000000140000001400000014000000
+  upgradePrice: 14000000230000003200000041000000500000005f0000006e0000007d0000008c0000009b000000aa000000b9000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000c8000000
   levelText: {fileID: 28344160}
   costText: {fileID: 324081113}
   targetUnit: {fileID: 11400000, guid: e41e57dcc4b90914c9b75924dde5acb4, type: 2}
@@ -26791,6 +26797,14 @@ PrefabInstance:
       propertyPath: buildingObject
       value: 
       objectReference: {fileID: 1580118543}
+    - target: {fileID: 6639809960704421038, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
+      propertyPath: upgradePrice.Array.data[1]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639809960704421038, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
+      propertyPath: upgradePrice.Array.data[2]
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8832934868396032673, guid: b4e11134eb706c84baa8dbb16425008e, type: 3}
       propertyPath: m_Sprite
       value: 
