@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
-using JetBrains.Annotations;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -13,12 +12,14 @@ public class HealthComponent : MonoBehaviour
     public UnityEvent onDeath;
     public int currentHealth;
     public int maxHealth;
-    public Slider hpSlider;
-    public TextMeshProUGUI hpText;
 
-    [Header("Damage Text")]
+    [Header("UI")]
     [SerializeField] private TMP_Text damageTextPrefab;
     [SerializeField] private Transform textSpawnPoint;
+    public Slider hpSlider;
+    public TextMeshProUGUI hpText;
+    [SerializeField] private TMP_Text damageText;
+
 
     public void init(int maxHealth)
     {
@@ -51,13 +52,8 @@ public class HealthComponent : MonoBehaviour
     public void onChangeMaxHP(int newMaxHP)
     {
         UnitInstance unitInstance = GetComponent<UnitInstance>();
-        float healthMultiplier = 0;
-        bool hasHealthUpgrade = UpgradesManager.instance.healthUpgrades.ContainsKey(unitInstance.archetype);
-        if (unitInstance && hasHealthUpgrade)
-        {
-            healthMultiplier = UpgradesManager.instance.healthUpgrades[unitInstance.archetype];
-        }
-        maxHealth = (int)(newMaxHP * (1 + healthMultiplier));
+        float healthMultiplier = UpgradesManager.instance.getHealthMultiplier(unitInstance.archetype);
+        maxHealth = (int)(newMaxHP * healthMultiplier);
         currentHealth = maxHealth;
         updateUI();
     }
@@ -70,6 +66,17 @@ public class HealthComponent : MonoBehaviour
             hpSlider.value = currentHealth;
         }
         if (hpText) hpText.text = currentHealth + "/" + maxHealth;
+        if (damageText)
+        {
+            UnitInstance unitInstance = GetComponent<UnitInstance>();
+            UnitFighter unitFighter = GetComponent<UnitFighter>();
+
+            if (!unitInstance || !unitFighter) return;
+
+            float damageMultiplier = unitFighter.damageMultiplier;
+            int level = Mathf.Max(0, unitInstance.currentLevel - 1);
+            damageText.text = ((int)(unitInstance.archetype.attack[level] * damageMultiplier)).ToString();
+        }
     }
 }
 

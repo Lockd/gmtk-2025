@@ -15,5 +15,5 @@ MonoBehaviour:
   enemyGroup:
   - level: 1
     count: 1
-    enemySO: {fileID: 11400000, guid: 6f03b1d56c98a16479e9b36ff68e136b, type: 2}
+    enemySO: {fileID: 11400000, guid: 1696fcdc3b7cb904f8b17919ad1052ff, type: 2}
   intervalBetweenSpawns: 1
