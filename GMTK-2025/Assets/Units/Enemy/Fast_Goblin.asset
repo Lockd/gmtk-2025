@@ -29,7 +29,7 @@ MonoBehaviour:
   - {fileID: -1315662294, guid: 63f426a6274b04541bb359310a28cd2c, type: 3}
   icon: {fileID: 0}
   purchasePrice: 0
-  goldOnKill: 1
+  goldOnKill: 20
   maxLevel: 10
   health: 14000000230000003c00000064000000640000006400000064000000640000006400000064000000
   attackRange: 1
