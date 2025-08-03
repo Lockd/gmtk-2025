@@ -32,8 +32,8 @@ public abstract class Building : MonoBehaviour
             if (GoldManager.instance.canAfford(cost))
             {
                 GoldManager.instance.changeGold(-cost);
+                return true;
             }
-            return GoldManager.instance.canAfford(cost);
         }
         return false;
     }
