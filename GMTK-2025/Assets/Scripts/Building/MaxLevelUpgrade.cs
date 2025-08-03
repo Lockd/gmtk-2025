@@ -15,7 +15,6 @@ public class MaxLevelUpgrade : Building
         {
             int levels = additionalLevels[level - 1];
             UpgradesManager.instance.onChangeMaxLevel(levels);
-            assignTexts();
         }
         afterUpgrade();
     }

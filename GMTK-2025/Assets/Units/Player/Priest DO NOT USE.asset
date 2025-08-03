@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1368bc53d1acd547ae9bb3c572aef1e, type: 3}
-  m_Name: Priest
+  m_Name: Priest DO NOT USE
   m_EditorClassIdentifier: 
   isEnemy: 0
   targetType: 0

@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogues_6
+      name: warrior_1
       rect:
         serializedVersion: 2
         x: 160
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_2
+      name: barbarian_2
       rect:
         serializedVersion: 2
         x: 96
@@ -467,7 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: warrior_1
+      name: barbarian_1
       rect:
         serializedVersion: 2
         x: 192
@@ -572,7 +572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rogues_22
+      name: barbarian_3
       rect:
         serializedVersion: 2
         x: 160
@@ -963,6 +963,9 @@ TextureImporter:
       archer_1: -1288772577
       archer_2: -442811289
       archer_3: -233289419
+      barbarian_1: 1247368778
+      barbarian_2: -397433424
+      barbarian_3: 1981257847
       dwarf_warrior: 1327630225
       mage_1: -325699584
       mage_2: 421804774
@@ -980,7 +983,6 @@ TextureImporter:
       rogues_19: -1438382315
       rogues_20: -1911416655
       rogues_21: -236394508
-      rogues_22: 1981257847
       rogues_23: -880776688
       rogues_25: 1125672106
       rogues_28: 1572199152
@@ -994,11 +996,9 @@ TextureImporter:
       rogues_38: 1739408509
       rogues_39: -1746251359
       rogues_5: -840599850
-      rogues_6: -1298783118
       rogues_7: -707100445
       rogues_8: -5125082
-      warrior_1: 1247368778
-      warrior_2: -397433424
+      warrior_1: -1298783118
       warrior_3: -2022447142
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

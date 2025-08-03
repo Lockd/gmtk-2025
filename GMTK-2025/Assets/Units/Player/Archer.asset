@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEnemy: 0
   targetType: 0
+  attackType: 2
+  AOERadius: 2
   spritesPerLevel:
   - {fileID: -442811289, guid: b003c9977bb365d42836f710952a8f2f, type: 3}
   - {fileID: -442811289, guid: b003c9977bb365d42836f710952a8f2f, type: 3}

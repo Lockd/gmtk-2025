@@ -15,7 +15,6 @@ public class LevelingSpeedBuilding : Building
         {
             float speedBoost = reduceLevelingSpeed[level - 1];
             UpgradesManager.instance.onChangeReduceLevelingSpeed(speedBoost);
-            assignTexts();
         }
         afterUpgrade();
     }

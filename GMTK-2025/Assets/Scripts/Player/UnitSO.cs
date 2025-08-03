@@ -6,6 +6,8 @@ public class UnitSO : ScriptableObject
 {
     public bool isEnemy = false;
     public TARGET_TYPE targetType = TARGET_TYPE.Enemy;
+    public ATTACK_TYPE attackType = ATTACK_TYPE.Melee;
+    public float AOERadius = 2f;
     public List<Sprite> spritesPerLevel = new List<Sprite>();
     public Sprite icon;
     public int purchasePrice = 5;
@@ -19,4 +21,12 @@ public class UnitSO : ScriptableObject
     public float moveSpeed;
     public ActionSheet actionSheet;
     public Vector2 spawnOffset;
+}
+
+public enum ATTACK_TYPE
+{
+    Melee,
+    Melee_AOE,
+    Ranged,
+    Ranged_AOE
 }

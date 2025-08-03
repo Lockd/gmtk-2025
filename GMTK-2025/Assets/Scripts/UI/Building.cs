@@ -45,6 +45,7 @@ public abstract class Building : MonoBehaviour
         {
             button.interactable = false;
         }
+        assignTexts();
     }
 
     public void assignTexts()

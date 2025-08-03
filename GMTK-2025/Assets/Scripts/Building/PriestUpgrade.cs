@@ -16,12 +16,10 @@ public class PriestUpgrade : Building
         if (level <= damageMultiplier.Count)
         {
             UpgradesManager.instance.changeDamageMultiplier(damageMultiplier[level - 1], targetUnit);
-            assignTexts();
         }
         if (level <= healthMultiplier.Count)
         {
             UpgradesManager.instance.changeHealthMultiplier(healthMultiplier[level - 1], targetUnit);
-            assignTexts();
         }
         afterUpgrade();
     }
