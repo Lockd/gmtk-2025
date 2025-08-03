@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bbf336b4-c979-4f08-a6ae-8f0fc846d32e}">
+		<property name="assetPath">
+			<value>Music/GMTK25 Music Track Intro.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>60.00002083333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fa5875e0-a6d2-489e-9e2d-0b88db7be57c}</destination>
+		</relationship>
+	</object>
+</objects>

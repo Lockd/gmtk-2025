@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{85ee98e4-df41-41f4-87a5-53cbdfcde2ff}">
+		<property name="assetPath">
+			<value>SFX/enemy/enemy_dmg/enemy_dmg_3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fa5875e0-a6d2-489e-9e2d-0b88db7be57c}</destination>
+		</relationship>
+	</object>
+</objects>
