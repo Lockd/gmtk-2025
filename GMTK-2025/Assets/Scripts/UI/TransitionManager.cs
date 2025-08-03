@@ -32,6 +32,7 @@ public class TransitionManager : MonoBehaviour
     public void transitionCenterToRight()
     {
         SceneManager.LoadScene("Game"); // TODO I am not sure if this is the right way to do that, but at this point who cares
+        MusicManager.instance.SetMusicIntensity(1);
         canvas.enabled = true;
         panel.DOAnchorPosX(0f, 0f);
         panel.DOAnchorPosX(2500f, 0.3f).OnComplete(() =>

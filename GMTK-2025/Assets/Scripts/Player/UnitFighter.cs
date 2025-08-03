@@ -152,6 +152,8 @@ public class UnitFighter : MonoBehaviour
 
         unitInstance.animationHandler.playDeathAnimation();
 
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/enemy/enemy_death");
+
         Destroy(gameObject, 0.8f);
     }
 }
