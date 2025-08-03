@@ -34,7 +34,6 @@ public class TrainingManager : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
