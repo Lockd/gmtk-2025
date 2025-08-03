@@ -386,8 +386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   archetype: {fileID: 0}
   currentLevel: 0
-  cosmetics: {fileID: 0}
-  hp: {fileID: 0}
+  cosmetics: {fileID: 7768730263355520932}
+  hp: {fileID: 2749267255243844665}
   animationHandler: {fileID: 794426439185921114}
 --- !u!114 &7768730263355520932
 MonoBehaviour:
@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ed6e44e18811141afda6f9b54a372c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitInstance: {fileID: 3715938498848196286}
   spriteRenderer: {fileID: 3790824775410316030}
 --- !u!114 &-2827874600182060673
 MonoBehaviour:

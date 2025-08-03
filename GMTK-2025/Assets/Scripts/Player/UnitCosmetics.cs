@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class UnitCosmetics : MonoBehaviour
 {
-    private UnitInstance unit;
+    public UnitInstance unitInstance;
     [SerializeField] private SpriteRenderer spriteRenderer;
-
-    void Awake()
-    {
-        unit = GetComponent<UnitInstance>();
-    }
 
     public void setSprite(Sprite sprite)
     {
+        if (unitInstance.archetype.isEnemy)
+        {
+            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
         if (spriteRenderer != null)
         {
             spriteRenderer.sprite = sprite;
@@ -22,5 +23,12 @@ public class UnitCosmetics : MonoBehaviour
         {
             Debug.LogWarning("SpriteRenderer is not assigned in UnitCosmetics.");
         }
+    }
+
+    public void flipSprite(bool goingLeft)
+    {
+        if (unitInstance.archetype.isEnemy) return;
+
+        spriteRenderer.flipX = goingLeft;
     }
 }

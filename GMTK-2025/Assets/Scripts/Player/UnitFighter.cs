@@ -41,6 +41,7 @@ public class UnitFighter : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, currentTarget.transform.position, moveSpeed * Time.deltaTime);
             unitInstance.animationHandler.playWalkingAnimation(true);
+            if (!unitInstance.archetype.isEnemy) unitInstance.cosmetics.flipSprite(false);
         }
         // If is enemy and no target - some to attack castle, but not lock the target on castle
         if (currentTarget == null && unitInstance.archetype.isEnemy)
@@ -48,13 +49,13 @@ public class UnitFighter : MonoBehaviour
             Vector2 castlePosition = new Vector2(CastleManager.instance.transform.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, castlePosition, moveSpeed * Time.deltaTime);
             unitInstance.animationHandler.playWalkingAnimation(true);
-
         }
         // If no target and not at starting position, return to it
         if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) > 0.1f && !unitInstance.archetype.isEnemy)
         {
             transform.position = Vector2.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
             unitInstance.animationHandler.playWalkingAnimation(true);
+            unitInstance.cosmetics.flipSprite(true);
         }
 
         // Try to search for target every 0.3 seconds
