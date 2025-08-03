@@ -19,23 +19,23 @@ public class TransitionManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void transitionLeftToCenter()
+    public void transitionMenu()
     {
         canvas.enabled = true;
         panel.DOAnchorPosX(-2500f, 0f);
-        panel.DOAnchorPosX(0, 0.3f).OnComplete(() =>
+        panel.DOAnchorPosX(0, 1f).OnComplete(() =>
        {
-           canvas.enabled = false;
+           SceneManager.LoadScene("Main Menu");
        });
     }
 
-    public void transitionCenterToRight()
+    public void transitionGame()
     {
         SceneManager.LoadScene("Game"); // TODO I am not sure if this is the right way to do that, but at this point who cares
         MusicManager.instance.SetMusicIntensity(1);
         canvas.enabled = true;
         panel.DOAnchorPosX(0f, 0f);
-        panel.DOAnchorPosX(2500f, 0.3f).OnComplete(() =>
+        panel.DOAnchorPosX(2500f, 1f).OnComplete(() =>
         {
             canvas.enabled = false;
         });

@@ -1,7 +1,9 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -9,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public EnemyWave[] waves;
     public float startSpawningAfter;
     public float wavesCooldown = 15f;
+    public bool isLastWave = false;
     public List<UnitFighter> spawnedEnemies = new List<UnitFighter>();
 
     [SerializeField] private GameObject enemyPrefab;
@@ -43,8 +46,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnWave()
     {
+        if (isLastWave) return;
+
         EnemyWave w = waves[waveIdx];
         StartCoroutine(DeployEnemies(w));
+        if (w == waves[waves.Length - 1]) isLastWave = true;
         waveIdx = Mathf.Clamp(waveIdx + 1, 0, waves.Length - 1);
     }
 
@@ -80,5 +86,10 @@ public class EnemySpawner : MonoBehaviour
     public void onUnitDeath(UnitFighter unit)
     {
         spawnedEnemies.Remove(unit);
+        if (isLastWave && spawnedEnemies.Count == 0)
+        {
+            PlayerPrefs.SetInt("lastWaveCompleted", 1);
+            TransitionManager.instance.transitionMenu();
+        }
     }
 }

@@ -20,6 +20,10 @@ public class DecisionBehaviour : MonoBehaviour
         trainingManager = manager;
         runButton.onClick.AddListener(RunNextLap);
         deployButton.onClick.AddListener(Deploy);
+        if(thisUnit.currentLevel >= thisUnit.archetype.maxLevel)
+        {
+            runButton.transform.parent.gameObject.SetActive(false);
+        }
     }
 
     void RunNextLap()

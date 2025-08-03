@@ -37,6 +37,11 @@ public class TrainingManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Start()
+    {
+        updateUI();
+    }
+
     public void onSpawnTrainingUnit(UnitSO unitType)
     {
         GameObject unitObject = Instantiate(trainingUnitPrefab);
@@ -64,21 +69,10 @@ public class TrainingManager : MonoBehaviour
         runningSequence.OnComplete(() =>
         {
             unitInstancesAwaitingDecision.Add(unit);
-            decisionManager.SetDecisions();
             unit.onLevelUp();
+            decisionManager.SetDecisions();
             unit.animationHandler.playWalkingAnimation(false);
         });
-    }
-
-    // TODO this is only need for testing
-    private void spawnCombatUnit(UnitSO unitType)
-    {
-        GameObject unitObject = Instantiate(fightingUnitPrefab);
-        UnitInstance unitInstance = unitObject.GetComponent<UnitInstance>();
-        unitInstance.init(unitType);
-        combatUnits.Add(unitInstance.GetComponent<UnitFighter>());
-        unitInstance.onLevelUp();
-        unitObject.transform.position = new Vector2(combatPoint.position.x + unitInstance.archetype.spawnOffset.x, combatPoint.position.y + unitInstance.archetype.spawnOffset.y);
     }
 
     public void deployUnit(UnitInstance unit)
@@ -98,7 +92,7 @@ public class TrainingManager : MonoBehaviour
         updateUI();
     }
 
-    private void updateUI()
+    public void updateUI()
     {
         int maxUnits = maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
         int currentUnits = trainingUnits.Count + combatUnits.Count;

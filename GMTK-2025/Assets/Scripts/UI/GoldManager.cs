@@ -17,13 +17,13 @@ public class GoldManager : MonoBehaviour
             return;
         }
         instance = this;
-        goldText.text = "" + gold;
+        goldText.text = "Gold: " + gold;
     }
 
     public void changeGold(int amount)
     {
         gold = Mathf.Min(gold + amount, int.MaxValue);
-        goldText.text = "" + gold;
+        goldText.text = "Gold: " + gold;
     }
 
     public bool canAfford(int cost)
