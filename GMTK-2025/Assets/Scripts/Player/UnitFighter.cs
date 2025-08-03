@@ -7,7 +7,7 @@ public class UnitFighter : MonoBehaviour
     public GameObject currentTarget;
     private float enemiesCheckTimer = 0f;
     private float attackAt = 0f;
-    private float damageMultiplier = 0;
+    public float damageMultiplier = 0;
     Vector2 startingPosition;
 
     [Header("Modules")]

@@ -9,12 +9,6 @@ public class UnitCosmetics : MonoBehaviour
 
     public void setSprite(Sprite sprite)
     {
-        if (unitInstance.archetype.isEnemy)
-        {
-            spriteRenderer.flipX = true;
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-
         if (spriteRenderer != null)
         {
             spriteRenderer.sprite = sprite;
