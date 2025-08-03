@@ -25,10 +25,10 @@ MonoBehaviour:
   purchasePrice: 0
   goldOnKill: 1
   maxLevel: 4
-  health: 1e000000320000005500000091000000
+  health: 1e000000320000004600000064000000
   attackRange: 1
   breakBetweenAttacks: 1
-  attack: 0a0000000f000000190000002d000000
+  attack: 0a0000000f000000140000001e000000
   levelUpTime: 3
   moveSpeed: 2
   actionSheet: {fileID: 0}
