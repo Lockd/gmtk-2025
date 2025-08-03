@@ -55,6 +55,7 @@ public class TrainingManager : MonoBehaviour
         Vector2 topRight = startPoint.position;
         Vector2 bottomRight = new Vector2(startPoint.position.x, midPoint.position.y);
         Vector2 bottomLeft = midPoint.position;
+        unit.animationHandler.playWalkingAnimation(true);
         Vector2 topLeft = new Vector2(midPoint.position.x, startPoint.position.y);
         runningSequence.Append(unit.transform.DOMove(bottomRight, timePerSegment).SetEase(Ease.Linear));
         runningSequence.Append(unit.transform.DOMove(bottomLeft, timePerSegment).SetEase(Ease.Linear));
@@ -65,6 +66,7 @@ public class TrainingManager : MonoBehaviour
             unitInstancesAwaitingDecision.Add(unit);
             decisionManager.SetDecisions();
             unit.onLevelUp();
+            unit.animationHandler.playWalkingAnimation(false);
         });
     }
 
@@ -105,8 +107,8 @@ public class TrainingManager : MonoBehaviour
 
     public bool canSpawnMoreUnits()
     {
-        int maxUnits = TrainingManager.instance.maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
-        int currentUnits = TrainingManager.instance.trainingUnits.Count + TrainingManager.instance.combatUnits.Count;
+        int maxUnits = maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
+        int currentUnits = trainingUnits.Count + combatUnits.Count;
         return currentUnits < maxUnits;
     }
 
@@ -118,11 +120,11 @@ public class TrainingManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) onSpawnTrainingUnit(unitTypes[2]);
         if (Input.GetKeyDown(KeyCode.Alpha4)) onSpawnTrainingUnit(unitTypes[3]);
         if (Input.GetKeyDown(KeyCode.Alpha5)) onSpawnTrainingUnit(unitTypes[4]);
-        if (Input.GetKeyDown(KeyCode.F1)) spawnCombatUnit(unitTypes[0]);
-        if (Input.GetKeyDown(KeyCode.F2)) spawnCombatUnit(unitTypes[1]);
-        if (Input.GetKeyDown(KeyCode.F3)) spawnCombatUnit(unitTypes[2]);
-        if (Input.GetKeyDown(KeyCode.F4)) spawnCombatUnit(unitTypes[3]);
-        if (Input.GetKeyDown(KeyCode.F5)) spawnCombatUnit(unitTypes[4]);
+        // if (Input.GetKeyDown(KeyCode.F1)) spawnCombatUnit(unitTypes[0]);
+        // if (Input.GetKeyDown(KeyCode.F2)) spawnCombatUnit(unitTypes[1]);
+        // if (Input.GetKeyDown(KeyCode.F3)) spawnCombatUnit(unitTypes[2]);
+        // if (Input.GetKeyDown(KeyCode.F4)) spawnCombatUnit(unitTypes[3]);
+        // if (Input.GetKeyDown(KeyCode.F5)) spawnCombatUnit(unitTypes[4]);
     }
 #endif
 }
