@@ -17616,6 +17616,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1c74d465d58aa794a90cc8e20041ee03, type: 2}
   - {fileID: 11400000, guid: 52b64fd3f262ce942a135a35cd1469ca, type: 2}
   - {fileID: 11400000, guid: 881986da3bf236249b343c1d84f1cb37, type: 2}
+  - {fileID: 11400000, guid: 237f737a07d488c45b512bca5abd17e9, type: 2}
+  - {fileID: 11400000, guid: a1bb11d8c3a11304e99b21b5443ae628, type: 2}
+  - {fileID: 11400000, guid: 8d4aa986ed9d58d4cb9ea4cc88a691ba, type: 2}
+  - {fileID: 11400000, guid: 7e3b2f3bf1bfa5e4bbe0846c9070a4ce, type: 2}
   startSpawningAfter: 2
   wavesCooldown: 16
   spawnedEnemies: []
