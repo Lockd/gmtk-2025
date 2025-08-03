@@ -20,6 +20,12 @@ public class CastleManager : MonoBehaviour
     void Start()
     {
         castleHealth.init(castleMaxHealth);
+        castleHealth.onDeath.AddListener(onCastleDeath);
+    }
+
+    private void onCastleDeath()
+    {
+        TransitionManager.instance.transitionMenu();
     }
 
 }

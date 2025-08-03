@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -85,5 +86,10 @@ public class EnemySpawner : MonoBehaviour
     public void onUnitDeath(UnitFighter unit)
     {
         spawnedEnemies.Remove(unit);
+        if (isLastWave && spawnedEnemies.Count == 0)
+        {
+            PlayerPrefs.SetInt("lastWaveCompleted", 1);
+            TransitionManager.instance.transitionMenu();
+        }
     }
 }
