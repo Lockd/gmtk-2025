@@ -52,13 +52,8 @@ public class HealthComponent : MonoBehaviour
     public void onChangeMaxHP(int newMaxHP)
     {
         UnitInstance unitInstance = GetComponent<UnitInstance>();
-        float healthMultiplier = 0;
-        bool hasHealthUpgrade = UpgradesManager.instance.healthUpgrades.ContainsKey(unitInstance.archetype);
-        if (unitInstance && hasHealthUpgrade)
-        {
-            healthMultiplier = UpgradesManager.instance.healthUpgrades[unitInstance.archetype];
-        }
-        maxHealth = (int)(newMaxHP * (1 + healthMultiplier));
+        float healthMultiplier = UpgradesManager.instance.getHealthMultiplier(unitInstance.archetype);
+        maxHealth = (int)(newMaxHP * healthMultiplier);
         currentHealth = maxHealth;
         updateUI();
     }
@@ -80,7 +75,7 @@ public class HealthComponent : MonoBehaviour
 
             float damageMultiplier = unitFighter.damageMultiplier;
             int level = Mathf.Max(0, unitInstance.currentLevel - 1);
-            damageText.text = ((int)(unitInstance.archetype.attack[level] * (1 + damageMultiplier))).ToString();
+            damageText.text = ((int)(unitInstance.archetype.attack[level] * damageMultiplier)).ToString();
         }
     }
 }

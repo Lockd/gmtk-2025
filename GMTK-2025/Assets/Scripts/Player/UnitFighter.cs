@@ -7,7 +7,7 @@ public class UnitFighter : MonoBehaviour
     public GameObject currentTarget;
     private float enemiesCheckTimer = 0f;
     private float attackAt = 0f;
-    public float damageMultiplier = 0;
+    public float damageMultiplier = 1f;
     Vector2 startingPosition;
 
     [Header("Modules")]
@@ -22,9 +22,7 @@ public class UnitFighter : MonoBehaviour
         startingPosition = transform.position;
         actionsManager.actionSheet = unitInstance.archetype.actionSheet;
 
-        damageMultiplier = UpgradesManager.instance.damageUpgrades.ContainsKey(unitInstance.archetype)
-            ? UpgradesManager.instance.damageUpgrades[unitInstance.archetype]
-            : 0;
+        damageMultiplier = UpgradesManager.instance.getDamageMultiplier(unitInstance.archetype);
 
         unitInstance.hp.onDeath.AddListener(onDeath);
     }
@@ -103,7 +101,7 @@ public class UnitFighter : MonoBehaviour
         unitInstance.animationHandler.playAttackAnimation(true);
         unitInstance.animationHandler.playWalkingAnimation(false);
 
-        int damage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * (1 + damageMultiplier));
+        int damage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * damageMultiplier);
 
         if (unitInstance.archetype.attackType == ATTACK_TYPE.Melee || unitInstance.archetype.attackType == ATTACK_TYPE.Ranged)
         {
@@ -133,7 +131,7 @@ public class UnitFighter : MonoBehaviour
             }
         }
         // Always damage the main target
-        int mainDamage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * (1 + damageMultiplier));
+        int mainDamage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * damageMultiplier);
         targetHp.onChangeHP(-mainDamage);
         attackAt = unitInstance.archetype.breakBetweenAttacks + Time.time;
     }

@@ -7,8 +7,8 @@ public class UpgradesManager : MonoBehaviour
     public float reduceLevelingSpeed = 0f;
     public int maxLevel = 3;
     public int additionalTrainingUnits = 0;
-    public Dictionary<UnitSO, float> damageUpgrades = new Dictionary<UnitSO, float>();
-    public Dictionary<UnitSO, float> healthUpgrades = new Dictionary<UnitSO, float>();
+    public Dictionary<UnitSO, List<float>> damageUpgrades = new Dictionary<UnitSO, List<float>>();
+    public Dictionary<UnitSO, List<float>> healthUpgrades = new Dictionary<UnitSO, List<float>>();
     public static UpgradesManager instance { get; private set; }
 
     private void Awake()
@@ -28,13 +28,20 @@ public class UpgradesManager : MonoBehaviour
 
     public void changeDamageMultiplier(float damage, UnitSO archetype)
     {
-
-        damageUpgrades[archetype] = damage;
+        if (!damageUpgrades.ContainsKey(archetype))
+        {
+            damageUpgrades[archetype] = new List<float>();
+        }
+        damageUpgrades[archetype].Add(damage);
     }
 
     public void changeHealthMultiplier(float health, UnitSO archetype)
     {
-        healthUpgrades[archetype] = health;
+        if (!healthUpgrades.ContainsKey(archetype))
+        {
+            healthUpgrades[archetype] = new List<float>();
+        }
+        healthUpgrades[archetype].Add(health);
     }
 
     public void onChangeMaxLevel(int level)
@@ -47,5 +54,32 @@ public class UpgradesManager : MonoBehaviour
         additionalTrainingUnits += units;
     }
 
+    public float getDamageMultiplier(UnitSO archetype)
+    {
+        if (damageUpgrades.ContainsKey(archetype) && damageUpgrades[archetype].Count > 0)
+        {
+            float baseMultiplier = 1;
+            for (int i = 0; i < damageUpgrades[archetype].Count; i++)
+            {
+                baseMultiplier *= damageUpgrades[archetype][i];
+            }
+            return baseMultiplier;
+        }
+        return 1f;
+    }
+
+    public float getHealthMultiplier(UnitSO archetype)
+    {
+        if (healthUpgrades.ContainsKey(archetype) && healthUpgrades[archetype].Count > 0)
+        {
+            float baseMultiplier = 1;
+            for (int i = 0; i < healthUpgrades[archetype].Count; i++)
+            {
+                baseMultiplier *= healthUpgrades[archetype][i];
+            }
+            return baseMultiplier;
+        }
+        return 1f;
+    }
 }
 
