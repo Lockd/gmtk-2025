@@ -17619,7 +17619,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d4aa986ed9d58d4cb9ea4cc88a691ba, type: 2}
   - {fileID: 11400000, guid: 7e3b2f3bf1bfa5e4bbe0846c9070a4ce, type: 2}
   startSpawningAfter: 2
-  wavesCooldown: 16
+  wavesCooldown: 14
   isLastWave: 0
   spawnedEnemies: []
   enemyPrefab: {fileID: 6602026790839078009, guid: 48222ecae3fea34428bdee74074c3567, type: 3}
