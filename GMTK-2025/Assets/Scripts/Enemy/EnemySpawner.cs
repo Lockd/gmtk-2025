@@ -1,6 +1,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public EnemyWave[] waves;
     public float startSpawningAfter;
     public float wavesCooldown = 15f;
+    public bool isLastWave = false;
     public List<UnitFighter> spawnedEnemies = new List<UnitFighter>();
 
     [SerializeField] private GameObject enemyPrefab;
@@ -43,8 +45,11 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnWave()
     {
+        if (isLastWave) return;
+
         EnemyWave w = waves[waveIdx];
         StartCoroutine(DeployEnemies(w));
+        if (w == waves[waves.Length - 1]) isLastWave = true;
         waveIdx = Mathf.Clamp(waveIdx + 1, 0, waves.Length - 1);
     }
 
