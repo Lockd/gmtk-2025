@@ -40,17 +40,21 @@ public class UnitFighter : MonoBehaviour
         if (currentTarget != null && !isInAttackRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, currentTarget.transform.position, moveSpeed * Time.deltaTime);
+            unitInstance.animationHandler.playWalkingAnimation(true);
         }
         // If is enemy and no target - some to attack castle, but not lock the target on castle
         if (currentTarget == null && unitInstance.archetype.isEnemy)
         {
             Vector2 castlePosition = new Vector2(CastleManager.instance.transform.position.x, transform.position.y);
             transform.position = Vector2.MoveTowards(transform.position, castlePosition, moveSpeed * Time.deltaTime);
+            unitInstance.animationHandler.playWalkingAnimation(true);
+
         }
         // If no target and not at starting position, return to it
         if (currentTarget == null && Vector2.Distance(transform.position, startingPosition) > 0.1f && !unitInstance.archetype.isEnemy)
         {
             transform.position = Vector2.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
+            unitInstance.animationHandler.playWalkingAnimation(true);
         }
 
         // Try to search for target every 0.3 seconds
@@ -79,7 +83,11 @@ public class UnitFighter : MonoBehaviour
 
     private void checkCanAttack()
     {
-        if (attackAt > Time.time || currentTarget == null) return;
+        if (attackAt > Time.time || currentTarget == null)
+        {
+            unitInstance.animationHandler.playAttackAnimation(false);
+            return;
+        }
         if (Vector2.Distance(transform.position, currentTarget.transform.position) <= unitInstance.archetype.attackRange)
         {
             attackTarget();
@@ -91,8 +99,10 @@ public class UnitFighter : MonoBehaviour
         HealthComponent targetHp = currentTarget.GetComponent<HealthComponent>();
         if (targetHp == null) return;
 
-        int damage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * (1 + damageMultiplier));
+        unitInstance.animationHandler.playAttackAnimation(true);
+        unitInstance.animationHandler.playWalkingAnimation(false);
 
+        int damage = (int)(unitInstance.archetype.attack[unitInstance.currentLevel - 1] * (1 + damageMultiplier));
 
         if (unitInstance.archetype.attackType == ATTACK_TYPE.Melee || unitInstance.archetype.attackType == ATTACK_TYPE.Ranged)
         {
@@ -141,6 +151,9 @@ public class UnitFighter : MonoBehaviour
             GoldManager.instance.changeGold(unitInstance.archetype.goldOnKill);
         }
         else TrainingManager.instance.onUnitDeath(this);
+
+        unitInstance.animationHandler.playDeathAnimation();
+
         Destroy(gameObject, 0.5f);
     }
 }

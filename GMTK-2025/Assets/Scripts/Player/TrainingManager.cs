@@ -55,6 +55,7 @@ public class TrainingManager : MonoBehaviour
         Vector2 topRight = startPoint.position;
         Vector2 bottomRight = new Vector2(startPoint.position.x, midPoint.position.y);
         Vector2 bottomLeft = midPoint.position;
+        unit.animationHandler.playWalkingAnimation(true);
         Vector2 topLeft = new Vector2(midPoint.position.x, startPoint.position.y);
         runningSequence.Append(unit.transform.DOMove(bottomRight, timePerSegment).SetEase(Ease.Linear));
         runningSequence.Append(unit.transform.DOMove(bottomLeft, timePerSegment).SetEase(Ease.Linear));
@@ -65,6 +66,7 @@ public class TrainingManager : MonoBehaviour
             unitInstancesAwaitingDecision.Add(unit);
             decisionManager.SetDecisions();
             unit.onLevelUp();
+            unit.animationHandler.playWalkingAnimation(false);
         });
     }
 
@@ -105,8 +107,8 @@ public class TrainingManager : MonoBehaviour
 
     public bool canSpawnMoreUnits()
     {
-        int maxUnits = TrainingManager.instance.maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
-        int currentUnits = TrainingManager.instance.trainingUnits.Count + TrainingManager.instance.combatUnits.Count;
+        int maxUnits = maxHiredUnits + UpgradesManager.instance.additionalTrainingUnits;
+        int currentUnits = trainingUnits.Count + combatUnits.Count;
         return currentUnits < maxUnits;
     }
 

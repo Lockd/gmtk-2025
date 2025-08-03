@@ -9,11 +9,13 @@ public class UnitInstance : MonoBehaviour
 
     public UnitCosmetics cosmetics;
     public HealthComponent hp;
+    public AnimationHandler animationHandler;
 
     private void Awake()
     {
         cosmetics = GetComponent<UnitCosmetics>();
         hp = GetComponent<HealthComponent>();
+        animationHandler = GetComponent<AnimationHandler>();
     }
 
     public void init(UnitSO archetype)
