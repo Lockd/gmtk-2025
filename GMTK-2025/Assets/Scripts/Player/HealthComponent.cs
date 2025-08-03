@@ -10,6 +10,7 @@ public class HealthComponent : MonoBehaviour
 {
     public bool isDead = false;
     public UnityEvent onDeath;
+    public UnityEvent onGetDamage;
     public int currentHealth;
     public int maxHealth;
 
@@ -39,6 +40,7 @@ public class HealthComponent : MonoBehaviour
             damageText.text = amount.ToString();
             damageText.color = amount < 0 ? Color.red : Color.green;
             damageText.DOFade(0, 1f).OnComplete(() => Destroy(damageText.gameObject));
+            onGetDamage.Invoke();
         }
 
         if (currentHealth <= 0)
