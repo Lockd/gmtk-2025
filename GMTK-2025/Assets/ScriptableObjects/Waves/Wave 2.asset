@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyGroup:
   - level: 1
-    count: 3
-    enemySO: {fileID: 11400000, guid: 6f03b1d56c98a16479e9b36ff68e136b, type: 2}
-  intervalBetweenSpawns: 0.15
+    count: 1
+    enemySO: {fileID: 11400000, guid: 4de92b96427e8d443972352db84204de, type: 2}
+  intervalBetweenSpawns: 1

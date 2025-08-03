@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: Wave 3
   m_EditorClassIdentifier: 
   enemyGroup:
-  - level: 1
-    count: 3
+  - level: 2
+    count: 2
     enemySO: {fileID: 11400000, guid: 6f03b1d56c98a16479e9b36ff68e136b, type: 2}
-  - level: 1
-    count: 1
-    enemySO: {fileID: 11400000, guid: 564a5241e4630794787ee2256d196444, type: 2}
-  intervalBetweenSpawns: 0.15
+  intervalBetweenSpawns: 1
